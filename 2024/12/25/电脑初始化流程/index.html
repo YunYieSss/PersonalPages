@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    电脑初始化流程
+  </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Syjie">
+  <link rel="canonical" href="https://blog.syjie.cc/2024/12/25/%E7%94%B5%E8%84%91%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B5%81%E7%A8%8B/">
+  
+  
+  <link rel="icon" type="image/svg" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l7.383 7.418c.823.82.823 2.148 0 2.967a2.11 2.11 0 0 1-2.976 0L10 13"></path><path d="M6.293 15.293l-2.586-2.586a1 1 0 0 1 0-1.414l7.586-7.586a1 1 0 0 1 1.414 0l2.586 2.586a1 1 0 0 1 0 1.414l-7.586 7.586a1 1 0 0 1-1.414 0z"></path></g></svg>'>
+  
+  
+  
+<link rel="stylesheet" href="/css/b4c95347.css">
+
+  <script>window.i18n = {"tip-status-done":"Done","tip-status-default":"All","tip-status-todo":"Todo","tip-status-doing":"Doing","tip-status-other":"Other","text-select":"Select","text-move":"Move","text-esc":"Exit","January":"January","February":"February","March":"March","April":"April","May":"May","June":"June","July":"July","August":"August","September":"September","October":"October","November":"November","December":"December"}</script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="app">
+  <aside id="aside-box" class="left-aside">
+    <div class="header">
+      
+<link rel="stylesheet" href="/css/61875ce9.css">
+
+<div class="profile">
+  <a class="badge" href="/">
+    <span>Hi</span>
+    <span>Syjie</span>
+  </a>
+  <cosy-tooltip id="left-aside-button" placement="right">
+    <span slot="content">
+      <span>Show / Hide Left Navigation</span>
+      <cosy-short-key>[</cosy-short-key>
+    </span>
+    <cosy-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+        <g fill="none">
+          <path d="M16 4c1.104-.019 2 .896 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12zm1 2a1 1 0 0 0-1-1h-2.995v10H16a1 1 0 0 0 1-1V6zm-4.995 9V5H4.001a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8.004z" fill="currentColor"></path>
+        </g>
+      </svg>
+    </cosy-icon>
+  </cosy-tooltip>
+</div>
+
+<script src="/js/69622cae.js"></script>
+
+      
+
+
+
+<script>
+  window.algolia = {
+    appId: "44H8YAD75Q",
+    SearchOnlyAPIKey: "a9823bdd60c0fed3bf1f72597bb96e65"
+  }
+</script>
+
+
+<script src="/js/0a6f193b.js"></script>
+
+    </div>
+    <div class="aside-category">
+      
+<link rel="stylesheet" href="/css/db04a759.css">
+
+
+<nav class="category-nav cosy-scrollbar">
+  <ul><li data-path="cosy-preference">
+        <a href="/cosy-preference">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M3.5 3A1.5 1.5 0 0 0 2 4.5v4A1.5 1.5 0 0 0 3.5 10h9A1.5 1.5 0 0 0 14 8.5v-4A1.5 1.5 0 0 0 12.5 3h-9zM3 4.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm.5 6.5A1.5 1.5 0 0 0 2 12.5v4A1.5 1.5 0 0 0 3.5 18h9a1.5 1.5 0 0 0 1.5-1.5v-4a1.5 1.5 0 0 0-1.5-1.5h-9zM3 12.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm14-.063a2.003 2.003 0 0 1-2.5-1.937A2 2 0 0 1 16 8.563a2.005 2.005 0 0 1 1 0a2 2 0 0 1 0 3.874zM16.5 3a.5.5 0 0 1 .5.5v4.041a3.02 3.02 0 0 0-1 0V3.5a.5.5 0 0 1 .5-.5zm0 10.5c-.17 0-.337-.014-.5-.041V17.5a.5.5 0 0 0 1 0v-4.041c-.163.027-.33.041-.5.041z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">text-cosy-preference</div>
+        </a>
+      </li><li data-path="cosy-roadmap">
+        <a href="/cosy-roadmap">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M9.384 2a1 1 0 0 0-.966.742L4.616 17H2.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-2.116L11.582 2.742A1 1 0 0 0 10.616 2H9.384zM5.651 17l.8-3H11.5a.5.5 0 0 0 0-1H6.717l.534-2H10.5a.5.5 0 0 0 0-1H7.517l1.867-7h1.232l3.733 14H5.651z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">Roadmap</div>
+        </a>
+      </li><li data-path="cosy-resume">
+        <a href="/cosy-resume">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M8.5 4.498a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0zm1.5-2.5a2.5 2.5 0 0 0-2.43 3.086L5.471 4.15a1.761 1.761 0 0 0-2.317.88c-.4.882-.008 1.917.877 2.31L7 8.662v2.287l-1.877 4.645a1.75 1.75 0 0 0 3.245 1.311l1.556-3.849a.073.073 0 0 1 .028-.038a.086.086 0 0 1 .046-.012c.02 0 .035.005.046.012a.074.074 0 0 1 .028.038l1.555 3.849a1.75 1.75 0 0 0 3.245-1.311L13 10.96V8.662l2.968-1.322a1.74 1.74 0 0 0 .877-2.31a1.761 1.761 0 0 0-2.317-.88l-2.097.934a2.5 2.5 0 0 0-2.43-3.086zM4.065 5.444a.761.761 0 0 1 1-.38l3.918 1.744a2.5 2.5 0 0 0 2.034 0l3.918-1.744a.761.761 0 0 1 1 .38a.739.739 0 0 1-.373.983l-2.969 1.321a1 1 0 0 0-.593.914v2.298a1 1 0 0 0 .073.375l1.872 4.633a.75.75 0 0 1-1.39.562l-1.556-3.849c-.364-.9-1.639-.9-2.003 0l-1.555 3.85a.75.75 0 1 1-1.39-.562l1.876-4.646A1 1 0 0 0 8 10.95V8.662a1 1 0 0 0-.593-.914L4.438 6.427a.739.739 0 0 1-.373-.983z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">Resume</div>
+        </a>
+      </li></ul>
+  <ul><li class="active">
+        <a href="/categories/Java/">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10l7.383 7.418c.823.82.823 2.148 0 2.967a2.11 2.11 0 0 1-2.976 0L10 13"></path><path d="M6.293 15.293l-2.586-2.586a1 1 0 0 1 0-1.414l7.586-7.586a1 1 0 0 1 1.414 0l2.586 2.586a1 1 0 0 1 0 1.414l-7.586 7.586a1 1 0 0 1-1.414 0z"></path></g></svg>
+          <div class="ellipsis">
+            <span>Java</span>
+          </div>
+        </a>
+      </li></ul>
+</nav>
+
+
+<script src="/js/066f8989.js"></script>
+
+    </div>
+    <div class="bottom">
+      <cosy-tooltip id="button-preference" placement="right">
+        <span slot="content">
+          <span>Preference</span>
+          <cosy-short-key>⌘</cosy-short-key>
+          <cosy-short-key>p</cosy-short-key>
+        </span>
+        <cosy-icon bordered id="button-about-cosy-theme">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16">
+            <g fill="none">
+              <path d="M8 6a2 2 0 1 0 0 4a2 2 0 0 0 0-4zM7 8a1 1 0 1 1 2 0a1 1 0 0 1-2 0zm3.618-3.602a.708.708 0 0 1-.824-.567l-.26-1.416a.354.354 0 0 0-.275-.282a6.072 6.072 0 0 0-2.519 0a.354.354 0 0 0-.275.282l-.259 1.416a.71.71 0 0 1-.936.538l-1.359-.484a.355.355 0 0 0-.382.095c-.569.627-1 1.367-1.262 2.173a.352.352 0 0 0 .108.378l1.102.931a.704.704 0 0 1 0 1.076l-1.102.931a.352.352 0 0 0-.108.378A5.986 5.986 0 0 0 3.53 12.02a.355.355 0 0 0 .382.095l1.36-.484a.708.708 0 0 1 .936.538l.258 1.416c.026.14.135.252.275.281a6.075 6.075 0 0 0 2.52 0a.353.353 0 0 0 .274-.281l.26-1.416a.71.71 0 0 1 .936-.538l1.359.484c.135.048.286.01.382-.095c.569-.627 1-1.367 1.262-2.173a.352.352 0 0 0-.108-.378l-1.102-.931a.703.703 0 0 1 0-1.076l1.102-.931a.352.352 0 0 0 .108-.378A5.985 5.985 0 0 0 12.47 3.98a.355.355 0 0 0-.382-.095l-1.36.484a.71.71 0 0 1-.111.03zm-6.62.58l.937.333a1.71 1.71 0 0 0 2.255-1.3l.177-.97a5.105 5.105 0 0 1 1.265 0l.178.97a1.708 1.708 0 0 0 2.255 1.3L12 4.977c.255.334.467.698.63 1.084l-.754.637a1.704 1.704 0 0 0 0 2.604l.755.637a4.99 4.99 0 0 1-.63 1.084l-.937-.334a1.71 1.71 0 0 0-2.255 1.3l-.178.97a5.099 5.099 0 0 1-1.265 0l-.177-.97a1.708 1.708 0 0 0-2.255-1.3L4 11.023a4.987 4.987 0 0 1-.63-1.084l.754-.638a1.704 1.704 0 0 0 0-2.603l-.755-.637c.164-.386.376-.75.63-1.084z" fill="currentColor"></path>
+            </g>
+          </svg>
+        </cosy-icon>
+      </cosy-tooltip>
+    </div>
+  </aside>
+  <main>
+    
+<link rel="stylesheet" href="/css/4dbc8f91.css">
+
+
+<div class="post-container">
+  <header>
+    <div class="left">
+      
+<link rel="stylesheet" href="/css/7d333f9e.css">
+
+<nav class="breadcrumb">
+  <section>
+    <cosy-tooltip placement="bottom-left">
+      <span slot="content"><span>Home</span>
+        <cosy-short-key>⌘</cosy-short-key>
+        <cosy-short-key>H</cosy-short-key>
+      </span>
+      <cosy-icon href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M8.998 2.388a1.5 1.5 0 0 1 2.005 0l5.5 4.942A1.5 1.5 0 0 1 17 8.445V15.5a1.5 1.5 0 0 1-1.5 1.5H13a1.5 1.5 0 0 1-1.5-1.5V12a.5.5 0 0 0-.5-.5H9a.5.5 0 0 0-.5.5v3.5A1.5 1.5 0 0 1 7 17H4.5A1.5 1.5 0 0 1 3 15.5V8.445c0-.425.18-.83.498-1.115l5.5-4.942zm1.336.744a.5.5 0 0 0-.668 0l-5.5 4.942A.5.5 0 0 0 4 8.445V15.5a.5.5 0 0 0 .5.5H7a.5.5 0 0 0 .5-.5V12A1.5 1.5 0 0 1 9 10.5h2a1.5 1.5 0 0 1 1.5 1.5v3.5a.5.5 0 0 0 .5.5h2.5a.5.5 0 0 0 .5-.5V8.445a.5.5 0 0 0-.166-.371l-5.5-4.942z" fill="currentColor"></path>
+          </g>
+        </svg>
+      </cosy-icon>
+    </cosy-tooltip>
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <a class="ellipsis" href="/categories/Java/">
+      Java
+    </a>
+    
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <span class="ellipsis">
+      电脑初始化流程
+    </span>
+    
+  </section>
+</nav>
+
+
+<script src="/js/31d6cfe0.js"></script>
+
+    </div>
+    <div class="right">
+      
+        <cosy-tooltip id="toc-show-button" placement="left">
+          <span slot="content">
+            <span>Show / Hide Table of Contents</span>
+            <cosy-short-key>]</cosy-short-key>
+          </span>
+          <cosy-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path
+                  d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+        
+    </div>
+  </header>
+  <div class="content">
+    <main class="cosy-scrollbar">
+      <div class="article-container">
+        <!-- 渲染文章内容 -->
+        <article>
+          <!-- 文章标题 -->
+          <h1 class="post-title">电脑初始化流程</h1>
+          <div class="last-updated">
+            Last updated: 2024-12-25 16:28:23
+          </div>
+          <!-- 文章 -->
+          <h1 id="一、系统重装"><a href="#一、系统重装" class="headerlink" title="一、系统重装"></a>一、系统重装</h1><h1 id="二、操作系统激活"><a href="#二、操作系统激活" class="headerlink" title="二、操作系统激活"></a>二、操作系统激活</h1><h1 id="三、磁盘分区"><a href="#三、磁盘分区" class="headerlink" title="三、磁盘分区"></a>三、磁盘分区</h1><p>此处为语雀内容卡片，点击链接查看：<br><img src="https://cdn.jsdelivr.net/gh/YunYieSss/ImageHosting/img/202406111531713.png"></p>
+<h1 id="四、软件安装"><a href="#四、软件安装" class="headerlink" title="四、软件安装"></a>四、软件安装</h1><h1 id="五、搭建开发环境"><a href="#五、搭建开发环境" class="headerlink" title="五、搭建开发环境"></a>五、搭建开发环境</h1><h2 id="一-JDK安装"><a href="#一-JDK安装" class="headerlink" title="(一) JDK安装"></a>(一) JDK安装</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h3><ul>
+<li>官网下载</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.oracle.com/cn/java/technologies/downloads/#java11">https://www.oracle.com/cn/java/technologies/downloads/#java11</a></p>
+<ul>
+<li>网盘下载</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.alipan.com/s/36cTVSghJxg">https://www.alipan.com/s/36cTVSghJxg</a></p>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><p>1.8安装时jdk和jre分开安装，安装前先创建对应文件夹。JDK11安装只需要一个文件夹。</p>
+<h3 id="3-环境变量配置"><a href="#3-环境变量配置" class="headerlink" title="3. 环境变量配置"></a>3. 环境变量配置</h3><p>点击桌面“我的电脑”右键“属性”：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216678838-ce682800-9841-4d52-a0fd-98304ae74be6.png"></p>
+<p>点击“高级系统设置”：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216701190-b952aa89-df31-4e11-b65a-d7ae735bd7fa.png"></p>
+<p>点击“环境变量”：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216715403-5af635b4-e7d0-4477-9232-f57a222726c9.png"></p>
+<p>直接加入系统变量：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216743262-6e7e2847-6346-4c07-994e-5db9fb18b4de.png"></p>
+<p>找到jdk路径：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216768538-915b4e1a-435e-400b-88f3-f2628510933c.png"></p>
+<p>然后添加JAVA_HOME环境变量：</p>
+<p>在“环境变量”对话框中，点击“新建”按钮，并输入“JAVA_HOME”为变量名，JDK的安装路径为变量值。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216786995-6636fdde-41ff-49b5-9a96-9a23e69a5424.png"></p>
+<p>然后新建CLASSPATH环境变量：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216800969-de0d48c3-ec40-4b3f-a9ea-40a9d9d14b43.png"></p>
+<p>变量名: CLASSPATH</p>
+<p>变量值: .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216813900-436579dd-ab48-4d1a-b47f-b051aad0fbaf.png"></p>
+<p>添加到path变量：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216829490-54ac598b-3896-451d-9a12-f128b2342028.png"></p>
+<p>点击编辑，然后选择新建，加入下面变量值:</p>
+<p>%JAVA_HOME%\bin</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216847384-0101c639-f7c8-4c78-88ae-fdc9d8863704.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717216863341-1f014acd-f599-4e9f-9414-621412e33c87.png"></p>
+<h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h3><p>在Windows搜索栏中输入“cmd”并打开命令提示符。在命令提示符中输入“java -version”并按下回车键。</p>
+<h2 id="二-MAVEN安装"><a href="#二-MAVEN安装" class="headerlink" title="(二) MAVEN安装"></a>(二) MAVEN安装</h2><h3 id="1-下载-1"><a href="#1-下载-1" class="headerlink" title="1. 下载"></a>1. 下载</h3><ul>
+<li>官网</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a></p>
+<ul>
+<li>网盘</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717217602389-d505d0bf-dae3-4d3a-bb31-ade6202de572.png"></p>
+<h3 id="2-安装-1"><a href="#2-安装-1" class="headerlink" title="2. 安装"></a>2. 安装</h3><p>到文件夹解压即可</p>
+<h3 id="3-配置"><a href="#3-配置" class="headerlink" title="3. 配置"></a>3. 配置</h3><h4 id="一、更改本地库位置"><a href="#一、更改本地库位置" class="headerlink" title="一、更改本地库位置"></a>一、更改本地库位置</h4><p>打开&#x2F;conf&#x2F;settings.xml文件</p>
+<p>修改localRepository标签值，将值改为本地库文件夹位置</p>
+<h4 id="二、更换中心库位置"><a href="#二、更换中心库位置" class="headerlink" title="二、更换中心库位置"></a>二、更换中心库位置</h4><p><strong>maven 配置指南</strong></p>
+<p>打开 maven 的配置文件（ windows 机器一般在 maven 安装目录的 <strong>conf&#x2F;settings.xml</strong> ），在<mirrors></mirrors>标签中添加 mirror 子节点:</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;mirror&gt;
+  &lt;id&gt;aliyunmaven&lt;&#x2F;id&gt;
+  &lt;mirrorOf&gt;*&lt;&#x2F;mirrorOf&gt;
+  &lt;name&gt;阿里云公共仓库&lt;&#x2F;name&gt;
+  &lt;url&gt;https:&#x2F;&#x2F;maven.aliyun.com&#x2F;repository&#x2F;public&lt;&#x2F;url&gt;
+&lt;&#x2F;mirror&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果想使用其它代理仓库，可在<repositories></repositories>节点中加入对应的仓库使用地址。以使用 central 代理仓为例：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;repository&gt;
+  &lt;id&gt;central&lt;&#x2F;id&gt;
+  &lt;url&gt;https:&#x2F;&#x2F;maven.aliyun.com&#x2F;repository&#x2F;central&lt;&#x2F;url&gt;
+  &lt;releases&gt;
+    &lt;enabled&gt;true&lt;&#x2F;enabled&gt;
+  &lt;&#x2F;releases&gt;
+  &lt;snapshots&gt;
+    &lt;enabled&gt;true&lt;&#x2F;enabled&gt;
+  &lt;&#x2F;snapshots&gt;
+&lt;&#x2F;repository&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在你的 <strong>pom.xml</strong> 文件<denpendencies></denpendencies>节点中加入你要引用的文件信息：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;dependency&gt;
+  &lt;groupId&gt;[GROUP_ID]&lt;&#x2F;groupId&gt;
+  &lt;artifactId&gt;[ARTIFACT_ID]&lt;&#x2F;artifactId&gt;
+  &lt;version&gt;[VERSION]&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>执行拉取命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">mvn install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="4-测试-1"><a href="#4-测试-1" class="headerlink" title="4. 测试"></a>4. 测试</h3><h2 id="三-GIT安装"><a href="#三-GIT安装" class="headerlink" title="(三) GIT安装"></a>(三) GIT安装</h2><h3 id="1-下载-2"><a href="#1-下载-2" class="headerlink" title="1. 下载"></a>1. 下载</h3><h3 id="2-安装-2"><a href="#2-安装-2" class="headerlink" title="2. 安装"></a>2. 安装</h3><h3 id="3-配置-1"><a href="#3-配置-1" class="headerlink" title="3. 配置"></a>3. 配置</h3><h3 id="4-测试-2"><a href="#4-测试-2" class="headerlink" title="4. 测试"></a>4. 测试</h3><h2 id="四-数据库安装"><a href="#四-数据库安装" class="headerlink" title="(四) 数据库安装"></a>(四) 数据库安装</h2><h3 id="1-下载-3"><a href="#1-下载-3" class="headerlink" title="1. 下载"></a>1. 下载</h3><h3 id="2-安装-3"><a href="#2-安装-3" class="headerlink" title="2. 安装"></a>2. 安装</h3><h3 id="3-配置-2"><a href="#3-配置-2" class="headerlink" title="3. 配置"></a>3. 配置</h3><h3 id="4-测试-3"><a href="#4-测试-3" class="headerlink" title="4. 测试"></a>4. 测试</h3><h2 id="五-IDE安装"><a href="#五-IDE安装" class="headerlink" title="(五) IDE安装"></a>(五) IDE安装</h2><h3 id="1-下载-4"><a href="#1-下载-4" class="headerlink" title="1. 下载"></a>1. 下载</h3><h3 id="2-安装-4"><a href="#2-安装-4" class="headerlink" title="2. 安装"></a>2. 安装</h3><h3 id="3-配置-3"><a href="#3-配置-3" class="headerlink" title="3. 配置"></a>3. 配置</h3><h3 id="4-测试-4"><a href="#4-测试-4" class="headerlink" title="4. 测试"></a>4. 测试</h3><h2 id="六-mysql数据库安装"><a href="#六-mysql数据库安装" class="headerlink" title="(六) mysql数据库安装"></a>(六) mysql数据库安装</h2><h3 id="1-下载-5"><a href="#1-下载-5" class="headerlink" title="1. 下载"></a>1. 下载</h3><p>访问官方网站：<a target="_blank" rel="noopener" href="https://www.mysql.com/">https://www.mysql.com/</a><br><strong>首页滑到最下面，选择Downloads下的MySQL Community server</strong><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225418729-2c980f95-0962-4ec1-bb70-1049171b470a.png"><strong>首页滑到最下面，选择Downloads下的MySQL Community server</strong><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225430592-623c27e4-051f-43ed-8008-b0eb3db7e63d.png"><strong>点击查看下载历史版本</strong><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225443836-a84f1875-e11a-47a4-a2f0-2cf0195dab9e.png"><strong>根据你电脑的版本选择下载对应的ZIP文件，我的电脑是64位的，因此选择这项进行下载，点击Download会进入以下界面：</strong><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225452730-4c929b36-4493-4428-99c9-af8e0068dcd9.png"><strong>可手动选择历史版本</strong><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225462716-b35df845-c02f-439b-be3f-fcc487b9f72e.png"><strong>点击【</strong>No thanks，just start my download<strong>】不登录直接下载，等待一会有下载弹窗。</strong><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225474095-fe1ae97f-8d32-4405-a773-58e1773ec4fa.png"></p>
+<p><strong>点击【保存】就好，然后开始下载</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225488448-aaaf8f53-275f-4bae-aee1-d6706e021e88.png"></p>
+<h3 id="2-安装-5"><a href="#2-安装-5" class="headerlink" title="2. 安装"></a>2. 安装</h3><p>下载完毕后将文件解压到你想保存到的盘和目录内。我是将文件解压到E:\Program Files\Mysql目录下面。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225506936-e6150cd3-da29-4470-aebe-964f1aa3a788.png"></p>
+<h3 id="3-配置-4"><a href="#3-配置-4" class="headerlink" title="3. 配置"></a>3. 配置</h3><p>1、右键此电脑-&gt;属性—&gt;高级系统设置—&gt;环境变量—&gt;系统变量</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717224938336-817959c9-ba99-43e8-8d20-63829dbba14f.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717224945787-aeeacd7f-bf84-4f22-b59c-bc7835908a9c.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717224951724-d1085294-d3a3-41e0-b6c6-fe311339524a.png"></p>
+<p>点击新建，变量名为：MYSQL_HOME，添加你的mysql-5.7.27-winx64文件夹所在位置。</p>
+<p>我的是在E:\Program Files\Mysql\mysql-5.7.27-winx64，如图：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717224969221-a39e1a90-fdef-46a5-ab53-31bf376987f8.png"></p>
+<p>2、编辑Path</p>
+<p>复制%MYSQL_HOME%\bin到原有值的后面，如图：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717224983396-6c4db3df-c0da-4fda-9f20-da20fced7f7c.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717224989564-e161adb8-d946-4101-8494-12eb1fd871f5.png"></p>
+<p>3.配置my.ini文件</p>
+<p>在你的mysql-5.7.27-winx64目录下<strong>新建my.ini文件</strong>，我的是在E:\Program Files\Mysql\mysql-5.7.27-winx64目录下新建，</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225011812-875cce65-4214-4099-b2bd-7dc7dfd29411.png"></p>
+<p><strong>my.ini文件的内容为</strong>：如果安装目录不一样，记得修改MySQL的安装路径。</p>
+<pre class="line-numbers language-none"><code class="language-none">[mysqld]
+#端口号
+port &#x3D; 3306
+#mysql-5.7.27-winx64的路径
+basedir&#x3D;E:\Program Files\Mysql\mysql-5.7.27-winx64
+#mysql-5.7.27-winx64的路径+\data
+datadir&#x3D;E:\Program Files\Mysql\mysql-5.7.27-winx64\data 
+#最大连接数
+max_connections&#x3D;200
+#编码
+character-set-server&#x3D;utf8
+ 
+default-storage-engine&#x3D;INNODB
+ 
+sql_mode&#x3D;NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+ 
+[mysql]
+#编码
+default-character-set&#x3D;utf8 
+ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>创建完成后进入下一步。</p>
+<p>4.安装MySQL</p>
+<p>（1）在输入框内输入cmd，以<strong>管理员的身份运行</strong>，注意这里一定一定一定要以管理员的身份运行，否则在安装过程中会出现因为管理权限不够而导致的<strong>Install&#x2F;Remove of the Service Denied!（安装&#x2F;卸载服务被拒绝）</strong>，这一点非常重要！</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225120181-8e54ce25-9b16-4aaa-942a-0efe4e772e44.png"></p>
+<p>（2）在cmd中进入到E:\Program Files\Mysql\mysql-5.7.27-winx64\bin目录下:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225132738-75fb9c7a-cccd-4084-b864-1af468f7d613.png"></p>
+<p>输入安装命令：<strong>mysqld -install</strong>，若出现<strong>Service successfully installed</strong>，证明安装成功；如出现<strong>Install of the Service Denied</strong>，则说明没有以管理员权限来运行cmd：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225143833-867b78b4-96cf-4559-8793-d119f121153b.png"></p>
+<p>然后继续输入命令：<strong>mysqld –initialize</strong>，此时不会有任何提示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225151588-a236b8f7-a507-4d84-b7a7-09e2ffa43ad5.png"></p>
+<p>再输入启动命令：<strong>net start mysql</strong>，出现以下提示<strong>证明MySQL启动成功</strong>：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225151516-c9f41063-421c-49fa-8906-53076f5f343b.png"></p>
+<p>5.设置MySQL密码</p>
+<p>（1）在这里设置密码主要是为了解决：ERROR 1045 (28000): Access denied for user ‘root’@‘localhost’ (using password: NO)的问题</p>
+<p>（2）首先停止MySQL服务,输入命令行 net stop mysql：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225252445-bf692568-979c-4f5c-9358-dc5fc70dcef2.png"></p>
+<p>（3）在<strong>E:\Program Files\Mysql\mysql-5.7.27-winx64目录下找到my.ini</strong>，在[mysqld]字段下任意一行添加<strong>skip-grant-tables</strong>，保存即可：如果安装目录不一样，记得修改MySQL的安装路径。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225263800-73b76341-8d10-437c-9b3b-5dde8028e1fc.png"></p>
+<p>（4）重启MySQL,输入启动命令：<strong>net start mysql</strong>，出现以下提示证明MySQL启动成功：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225278131-3d5d539c-455c-4fa5-862d-f8ec437d6365.png"></p>
+<p>在输入命令<strong>mysql -u root -p</strong>，不需要输入密码，直接回车：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225288100-c46e0582-678d-47d5-a0d0-42d7af9dca6f.png"></p>
+<p>进入MySQL成功！哈哈，来到这一步后就应该值得高兴一下了！</p>
+<p>（5） 输入命令行<strong>use mysql</strong>，进入数据库：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225302689-65c4b246-ee2d-467e-8760-7c77f9e8d4c2.png"></p>
+<p>（6）输入命令行<strong>update user set authentication_string&#x3D;password(“xxxxxx”) where user&#x3D;”root”;</strong></p>
+<p>xxxxxx是你设置的新密码，敲击回车后若出现以下信息，证明修改成功！<strong>最后面的分号不要忘记。</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225314147-37d2614f-133c-4b9f-9da6-27950e209ad6.png"></p>
+<p>（7） 手动停止MySQL服务，在win10搜索栏内输入<strong>服务</strong>，找到<strong>MySQL</strong>。点击右键，然后点击停止即可。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225325244-3389bc13-37ef-4336-9311-86ca99bd36e8.png"></p>
+<p>然后在刚刚的my.ini文件中删除<strong>skip-grant-tables</strong>这一行，保存关闭。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225336297-e473826e-03c0-4e2f-9df5-7c3a83242918.png"></p>
+<p>（8） 再次启动<strong>cmd</strong>（管理员身份），输入启动命令：<strong>net start mysql</strong>，再输入<strong>mysql -u root -p</strong>，再输入你刚刚设置的密码，出现以下信息证明设置成功！</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225348083-21117d71-8471-4720-831d-faec7b70750c.png"></p>
+<p>然后输入命令行<strong>use mysql</strong>验证一下，结果报错：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225357964-d0a37858-693c-4750-813c-def84da16d34.png"></p>
+<p>既然没有重置密码，那就重置一下呗<br>键入命令行<strong>alter user user() identified by “xxxxxx”;</strong></p>
+<p>我的密码是123456，因此我键入 alter user user() identified by “123456”;回车！离胜利越来越近了！再次输入命令行<strong>use mysql</strong>验证一下，成功！</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717225381273-0af46e7f-1cf5-443c-aecb-7d9950a81c9b.png"></p>
+<h3 id="4-测试-5"><a href="#4-测试-5" class="headerlink" title="4. 测试"></a>4. 测试</h3><h2 id="七-Redis安装"><a href="#七-Redis安装" class="headerlink" title="(七) Redis安装"></a>(七) Redis安装</h2><h2 id="七-Nacos安装"><a href="#七-Nacos安装" class="headerlink" title="(七) Nacos安装"></a>(七) Nacos安装</h2><h2 id="八-VUE安装"><a href="#八-VUE安装" class="headerlink" title="(八) VUE安装"></a>(八) VUE安装</h2><h3 id="1-下载-6"><a href="#1-下载-6" class="headerlink" title="1. 下载"></a>1. 下载</h3><h3 id="2-安装-6"><a href="#2-安装-6" class="headerlink" title="2. 安装"></a>2. 安装</h3><h3 id="3-配置-5"><a href="#3-配置-5" class="headerlink" title="3. 配置"></a>3. 配置</h3><h3 id="4-测试-6"><a href="#4-测试-6" class="headerlink" title="4. 测试"></a>4. 测试</h3><h2 id="九-navicat安装"><a href="#九-navicat安装" class="headerlink" title="(九) navicat安装"></a>(九) navicat安装</h2><h3 id="1-下载-7"><a href="#1-下载-7" class="headerlink" title="1. 下载"></a>1. 下载</h3><p><img src="https://cdn.nlark.com/yuque/0/2024/png/446230/1717831525537-cacef94b-397c-4923-8eae-91d7a609c2ae.png"></p>
+<h3 id="2-安装-7"><a href="#2-安装-7" class="headerlink" title="2. 安装"></a>2. 安装</h3><h3 id="3-配置-6"><a href="#3-配置-6" class="headerlink" title="3. 配置"></a>3. 配置</h3><p>此处为语雀内容卡片，点击链接查看：<a target="_blank" rel="noopener" href="https://www.yuque.com/shiyingjie/lmre4r1/zpstnxmxyt087fk5">https://www.yuque.com/shiyingjie/lmre4r1/zpstnxmxyt087fk5</a></p>
+<h3 id="4-测试-7"><a href="#4-测试-7" class="headerlink" title="4. 测试"></a>4. 测试</h3><h2 id="十-Obsidian安装"><a href="#十-Obsidian安装" class="headerlink" title="(十) Obsidian安装"></a>(十) Obsidian安装</h2><h3 id="1-下载-8"><a href="#1-下载-8" class="headerlink" title="1. 下载"></a>1. 下载</h3><h3 id="2-安装-8"><a href="#2-安装-8" class="headerlink" title="2. 安装"></a>2. 安装</h3><h3 id="3-配置-7"><a href="#3-配置-7" class="headerlink" title="3. 配置"></a>3. 配置</h3><p><strong>obsidian无法加载社区插件</strong></p>
+<ul>
+<li>反复重启软件进入。—没用</li>
+<li>修改DNS。—没用</li>
+<li>使用proxy代理插件。—没用，修改代理也没用</li>
+<li>使用watttoolkit，加速github。—可行，需要关闭proxy代理插件</li>
+</ul>
+<h3 id="4-测试-8"><a href="#4-测试-8" class="headerlink" title="4. 测试"></a>4. 测试</h3>
+            <div class="post-tags">
+              <!-- 文章tags -->
+              
+                
+                  <cosy-label href="/tags/%E7%BC%96%E7%A8%8B/" size="sm"># 编程</cosy-label>
+                  
+                  <cosy-label href="/tags/Java/" size="sm"># Java</cosy-label>
+                  
+                    
+            </div>
+            <p class="motto">重拾纯粹的写作</p>
+        </article>
+        <!-- 评论 -->
+        <div id="vcomments"></div>
+        <div id="tcomment"></div>
+      </div>
+    </main>
+    <!-- toc -->
+    
+      <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+        <div class="meta-container">
+          <div class="toc-wrapper cosy-scrollbar">
+            <cosy-tooltip placement="right">
+              <p class="catalog">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h12"></path>
+                  </g>
+                </svg>
+                <span>Catalog</span>
+              </p>
+              <span slot="content">
+                <span>Hide Table of Contents</span>
+                <cosy-short-key>]</cosy-short-key>
+              </span>
+            </cosy-tooltip>
+            <!-- 文章toc -->
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%B3%BB%E7%BB%9F%E9%87%8D%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">一、系统重装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%BF%80%E6%B4%BB"><span class="toc-number">2.</span> <span class="toc-text">二、操作系统激活</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA"><span class="toc-number">3.</span> <span class="toc-text">三、磁盘分区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">4.</span> <span class="toc-text">四、软件安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">5.</span> <span class="toc-text">五、搭建开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-JDK%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.</span> <span class="toc-text">(一) JDK安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD"><span class="toc-number">5.1.1.</span> <span class="toc-text">1. 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.2.</span> <span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="toc-number">5.1.3.</span> <span class="toc-text">3. 环境变量配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95"><span class="toc-number">5.1.4.</span> <span class="toc-text">4. 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-MAVEN%E5%AE%89%E8%A3%85"><span class="toc-number">5.2.</span> <span class="toc-text">(二) MAVEN安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD-1"><span class="toc-number">5.2.1.</span> <span class="toc-text">1. 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-1"><span class="toc-number">5.2.2.</span> <span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE"><span class="toc-number">5.2.3.</span> <span class="toc-text">3. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95-1"><span class="toc-number">5.2.4.</span> <span class="toc-text">4. 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-GIT%E5%AE%89%E8%A3%85"><span class="toc-number">5.3.</span> <span class="toc-text">(三) GIT安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD-2"><span class="toc-number">5.3.1.</span> <span class="toc-text">1. 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-2"><span class="toc-number">5.3.2.</span> <span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE-1"><span class="toc-number">5.3.3.</span> <span class="toc-text">3. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95-2"><span class="toc-number">5.3.4.</span> <span class="toc-text">4. 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85"><span class="toc-number">5.4.</span> <span class="toc-text">(四) 数据库安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD-3"><span class="toc-number">5.4.1.</span> <span class="toc-text">1. 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-3"><span class="toc-number">5.4.2.</span> <span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE-2"><span class="toc-number">5.4.3.</span> <span class="toc-text">3. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95-3"><span class="toc-number">5.4.4.</span> <span class="toc-text">4. 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-IDE%E5%AE%89%E8%A3%85"><span class="toc-number">5.5.</span> <span class="toc-text">(五) IDE安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD-4"><span class="toc-number">5.5.1.</span> <span class="toc-text">1. 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-4"><span class="toc-number">5.5.2.</span> <span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE-3"><span class="toc-number">5.5.3.</span> <span class="toc-text">3. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95-4"><span class="toc-number">5.5.4.</span> <span class="toc-text">4. 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD-mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85"><span class="toc-number">5.6.</span> <span class="toc-text">(六) mysql数据库安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD-5"><span class="toc-number">5.6.1.</span> <span class="toc-text">1. 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-5"><span class="toc-number">5.6.2.</span> <span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE-4"><span class="toc-number">5.6.3.</span> <span class="toc-text">3. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95-5"><span class="toc-number">5.6.4.</span> <span class="toc-text">4. 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-Redis%E5%AE%89%E8%A3%85"><span class="toc-number">5.7.</span> <span class="toc-text">(七) Redis安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-Nacos%E5%AE%89%E8%A3%85"><span class="toc-number">5.8.</span> <span class="toc-text">(七) Nacos安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB-VUE%E5%AE%89%E8%A3%85"><span class="toc-number">5.9.</span> <span class="toc-text">(八) VUE安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD-6"><span class="toc-number">5.9.1.</span> <span class="toc-text">1. 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-6"><span class="toc-number">5.9.2.</span> <span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE-5"><span class="toc-number">5.9.3.</span> <span class="toc-text">3. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95-6"><span class="toc-number">5.9.4.</span> <span class="toc-text">4. 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D-navicat%E5%AE%89%E8%A3%85"><span class="toc-number">5.10.</span> <span class="toc-text">(九) navicat安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD-7"><span class="toc-number">5.10.1.</span> <span class="toc-text">1. 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-7"><span class="toc-number">5.10.2.</span> <span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE-6"><span class="toc-number">5.10.3.</span> <span class="toc-text">3. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95-7"><span class="toc-number">5.10.4.</span> <span class="toc-text">4. 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81-Obsidian%E5%AE%89%E8%A3%85"><span class="toc-number">5.11.</span> <span class="toc-text">(十) Obsidian安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD-8"><span class="toc-number">5.11.1.</span> <span class="toc-text">1. 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-8"><span class="toc-number">5.11.2.</span> <span class="toc-text">2. 安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE-7"><span class="toc-number">5.11.3.</span> <span class="toc-text">3. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E8%AF%95-8"><span class="toc-number">5.11.4.</span> <span class="toc-text">4. 测试</span></a></li></ol></li></ol></li></ol>
+          </div>
+        </div>
+      </cosy-drag-box>
+      
+  </div>
+
+</div>
+
+<script>
+  window.page = {
+    use: ''
+  }
+  window.katex = {
+    enable: "",
+    jsCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js",
+    cssCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+  }
+  window.mermaid = {
+    enable: "",
+    theme: "",
+    cdn: "//cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js",
+  }
+  window.valine = {
+    enable: "",
+    appId: 'yourValineAppId',
+    appKey: 'yourValineAppKey',
+    avatar: 'monsterid',
+    cdn: '//unpkg.com/valine@latest/dist/Valine.min.js',
+    serverURLs: ''
+  };
+  window.twikoo = {
+    enable: "",
+    envId: "yourTwikooEnvId",
+    cdn: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js',
+    lang: 'zh-CN',
+  }
+</script>
+
+
+<script src="/js/8f5fa89f.js"></script>
+
+  </main>
+</body>
+
+<script>
+  window.theme = {
+    color: 'hsl(238,50%,56%)'
+  }
+</script>
+
+
+<script src="/js/e5a59732.js"></script>
+
+
+</html>
