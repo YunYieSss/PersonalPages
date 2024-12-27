@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    数据库语句积累
+  </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Syjie">
+  <link rel="canonical" href="https://blog.syjie.cc/2024/12/27/2024/12/20241227084205/">
+  
+  
+  <link rel="icon" href='/img/favicon.png'>
+  
+  
+  
+<link rel="stylesheet" href="/css/b4c95347.css">
+
+  <script>window.i18n = {"tip-status-done":"完成","tip-status-default":"全部","tip-status-todo":"计划","tip-status-doing":"进行","tip-status-other":"其他","text-select":"选择","text-move":"移动","text-esc":"退出","January":"一月","February":"二月","March":"三月","April":"四月","May":"五月","June":"六月","July":"七月","August":"八月","September":"九月","October":"十月","November":"十一月","December":"十二月"}</script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body id="app">
+  <aside id="aside-box" class="left-aside">
+    <div class="header">
+      
+<link rel="stylesheet" href="/css/61875ce9.css">
+
+<div class="profile">
+  <a class="badge" href="/">
+    <span>Hi</span>
+    <span>Syjie</span>
+  </a>
+  <cosy-tooltip id="left-aside-button" placement="right">
+    <span slot="content">
+      <span>显示 / 隐藏 左侧导航</span>
+      <cosy-short-key>[</cosy-short-key>
+    </span>
+    <cosy-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+        <g fill="none">
+          <path d="M16 4c1.104-.019 2 .896 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12zm1 2a1 1 0 0 0-1-1h-2.995v10H16a1 1 0 0 0 1-1V6zm-4.995 9V5H4.001a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8.004z" fill="currentColor"></path>
+        </g>
+      </svg>
+    </cosy-icon>
+  </cosy-tooltip>
+</div>
+
+<script src="/js/69622cae.js"></script>
+
+      
+
+
+
+<script>
+  window.algolia = {
+    appId: "44H8YAD75Q",
+    SearchOnlyAPIKey: "a9823bdd60c0fed3bf1f72597bb96e65"
+  }
+</script>
+
+
+<script src="/js/0a6f193b.js"></script>
+
+    </div>
+    <div class="aside-category">
+      
+<link rel="stylesheet" href="/css/db04a759.css">
+
+
+<nav class="category-nav cosy-scrollbar">
+  <ul><li data-path="archives">
+        <a href="/archives">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M3.5 3A1.5 1.5 0 0 0 2 4.5v4A1.5 1.5 0 0 0 3.5 10h9A1.5 1.5 0 0 0 14 8.5v-4A1.5 1.5 0 0 0 12.5 3h-9zM3 4.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm.5 6.5A1.5 1.5 0 0 0 2 12.5v4A1.5 1.5 0 0 0 3.5 18h9a1.5 1.5 0 0 0 1.5-1.5v-4a1.5 1.5 0 0 0-1.5-1.5h-9zM3 12.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-4zm14-.063a2.003 2.003 0 0 1-2.5-1.937A2 2 0 0 1 16 8.563a2.005 2.005 0 0 1 1 0a2 2 0 0 1 0 3.874zM16.5 3a.5.5 0 0 1 .5.5v4.041a3.02 3.02 0 0 0-1 0V3.5a.5.5 0 0 1 .5-.5zm0 10.5c-.17 0-.337-.014-.5-.041V17.5a.5.5 0 0 0 1 0v-4.041c-.163.027-.33.041-.5.041z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">归档</div>
+        </a>
+      </li><li data-path="cosy-roadmap">
+        <a href="/cosy-roadmap">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M9.384 2a1 1 0 0 0-.966.742L4.616 17H2.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-2.116L11.582 2.742A1 1 0 0 0 10.616 2H9.384zM5.651 17l.8-3H11.5a.5.5 0 0 0 0-1H6.717l.534-2H10.5a.5.5 0 0 0 0-1H7.517l1.867-7h1.232l3.733 14H5.651z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">路线图</div>
+        </a>
+      </li><li data-path="cosy-resume">
+        <a href="/cosy-resume">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><g fill="none"><path d="M8.5 4.498a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0zm1.5-2.5a2.5 2.5 0 0 0-2.43 3.086L5.471 4.15a1.761 1.761 0 0 0-2.317.88c-.4.882-.008 1.917.877 2.31L7 8.662v2.287l-1.877 4.645a1.75 1.75 0 0 0 3.245 1.311l1.556-3.849a.073.073 0 0 1 .028-.038a.086.086 0 0 1 .046-.012c.02 0 .035.005.046.012a.074.074 0 0 1 .028.038l1.555 3.849a1.75 1.75 0 0 0 3.245-1.311L13 10.96V8.662l2.968-1.322a1.74 1.74 0 0 0 .877-2.31a1.761 1.761 0 0 0-2.317-.88l-2.097.934a2.5 2.5 0 0 0-2.43-3.086zM4.065 5.444a.761.761 0 0 1 1-.38l3.918 1.744a2.5 2.5 0 0 0 2.034 0l3.918-1.744a.761.761 0 0 1 1 .38a.739.739 0 0 1-.373.983l-2.969 1.321a1 1 0 0 0-.593.914v2.298a1 1 0 0 0 .073.375l1.872 4.633a.75.75 0 0 1-1.39.562l-1.556-3.849c-.364-.9-1.639-.9-2.003 0l-1.555 3.85a.75.75 0 1 1-1.39-.562l1.876-4.646A1 1 0 0 0 8 10.95V8.662a1 1 0 0 0-.593-.914L4.438 6.427a.739.739 0 0 1-.373-.983z" fill="currentColor"></path></g></svg>
+          <div class="ellipsis">简历</div>
+        </a>
+      </li></ul>
+  <ul><li class="">
+        <a href="/categories/Java/">
+          <svg t="1735198497593" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6683" width="200" height="200"><path d="M377.596784 791.989528s-39.199482 22.799699 27.799633 30.399598c81.198926 9.199878 122.598379 7.999894 211.997197-8.999881 0 0 23.599688 14.799804 56.399254 27.599635C473.395518 926.787745 220.198866 835.988946 377.596784 791.989528m-24.399677-112.198517s-43.799421 32.399572 23.199693 39.399479c86.598855 8.999881 155.197948 9.599873 273.596382-13.199825 0 0 16.399783 16.599781 42.199442 25.599661-242.596792 70.999061-512.593222 5.799923-338.995517-51.799315m206.397271-190.197485c49.399347 56.799249-12.999828 107.998572-12.999828 107.998572s125.398342-64.799143 67.799103-145.798072c-53.799289-75.599-94.998744-113.198503 128.198305-242.596792 0.199997 0-350.395367 87.598842-182.99758 280.396292m265.196493 385.194907s28.999617 23.799685-31.799579 42.399439c-115.798469 34.999537-481.593632 45.599397-583.192289 1.399982-36.599516-15.799791 31.999577-37.999498 53.599291-42.599437 22.399704-4.799937 35.399532-3.999947 35.399532-3.999947-40.599463-28.599622-262.596528 56.199257-112.798508 80.398937 408.3946 66.399122 744.790152-29.799606 638.791553-77.598974M396.396536 563.592548s-186.197538 44.199416-65.999128 60.199204c50.799328 6.79991 151.99799 5.199931 246.196745-2.599966 76.998982-6.399915 154.397958-20.39973 154.397958-20.39973s-27.19964 11.599847-46.799381 24.999669c-188.997501 49.799342-553.992675 26.599648-448.994063-24.19968 88.998823-42.799434 161.197869-37.999498 161.197869-37.999497m333.995583 186.597532c192.197459-99.79868 103.198635-195.797411 41.199456-182.797582-15.199799 3.199958-21.999709 5.999921-21.999709 5.99992s5.599926-8.799884 16.399783-12.599833c122.598379-43.199429 216.997131 127.198318-39.599477 194.597427 0-0.199997 2.99996-2.799963 3.999947-5.199932M614.393653 0s106.398593 106.398593-100.998664 269.99643c-166.197802 131.198265-37.999498 206.197274 0 291.596144-96.998717-87.598842-168.197776-164.597824-120.398408-236.396874C463.195652 220.197088 657.393085 168.997765 614.393653 0m-198.997369 1020.786502c184.397562 11.799844 467.593817-6.599913 474.19373-93.798759 0 0-12.799831 32.999564-152.397985 59.399214-157.397919 29.599609-351.595351 26.199654-466.59383 7.199905 0-0.199997 23.599688 19.399743 144.798085 27.19964" fill="#cdcdcd" p-id="6684"></path></svg>
+          <div class="ellipsis">
+            <span>Java</span>
+          </div>
+        </a>
+      </li><li class="active">
+        <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+          <svg t="1735198437246" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5433" width="200" height="200"><path d="M864.035 368.444V208.427c0-17.673-14.327-32-32-32h-640.07c-17.673 0-32 14.327-32 32v160.017c0 16.023 11.776 29.295 27.146 31.634-15.37 2.339-27.146 15.611-27.146 31.634v160.017c0 16.92 13.135 30.765 29.764 31.914-16.629 1.149-29.764 14.993-29.764 31.914v160.018c0 17.673 14.327 32 32 32h640.07c17.673 0 32-14.327 32-32v-160.02c0-16.92-13.136-30.765-29.764-31.914 16.629-1.149 29.764-14.993 29.764-31.914V431.711c0-16.023-11.777-29.295-27.146-31.634 15.369-2.338 27.146-15.611 27.146-31.633z m-640.07-128.017h576.07v96.017h-576.07v-96.017z m576.07 543.146h-576.07v-96.018h576.07v96.018z m0-223.845h-576.07v-96.017h576.07v96.017z" fill="#dbdbdb" p-id="5434"></path></svg>
+          <div class="ellipsis">
+            <span>数据库</span>
+          </div>
+        </a>
+      </li></ul>
+</nav>
+
+
+<script src="/js/066f8989.js"></script>
+
+    </div>
+    <div class="bottom">
+      <cosy-tooltip id="button-preference" placement="right">
+        <span slot="content">
+          <span>偏好</span>
+          <cosy-short-key>⌘</cosy-short-key>
+          <cosy-short-key>p</cosy-short-key>
+        </span>
+        <cosy-icon bordered id="button-about-cosy-theme">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16">
+            <g fill="none">
+              <path d="M8 6a2 2 0 1 0 0 4a2 2 0 0 0 0-4zM7 8a1 1 0 1 1 2 0a1 1 0 0 1-2 0zm3.618-3.602a.708.708 0 0 1-.824-.567l-.26-1.416a.354.354 0 0 0-.275-.282a6.072 6.072 0 0 0-2.519 0a.354.354 0 0 0-.275.282l-.259 1.416a.71.71 0 0 1-.936.538l-1.359-.484a.355.355 0 0 0-.382.095c-.569.627-1 1.367-1.262 2.173a.352.352 0 0 0 .108.378l1.102.931a.704.704 0 0 1 0 1.076l-1.102.931a.352.352 0 0 0-.108.378A5.986 5.986 0 0 0 3.53 12.02a.355.355 0 0 0 .382.095l1.36-.484a.708.708 0 0 1 .936.538l.258 1.416c.026.14.135.252.275.281a6.075 6.075 0 0 0 2.52 0a.353.353 0 0 0 .274-.281l.26-1.416a.71.71 0 0 1 .936-.538l1.359.484c.135.048.286.01.382-.095c.569-.627 1-1.367 1.262-2.173a.352.352 0 0 0-.108-.378l-1.102-.931a.703.703 0 0 1 0-1.076l1.102-.931a.352.352 0 0 0 .108-.378A5.985 5.985 0 0 0 12.47 3.98a.355.355 0 0 0-.382-.095l-1.36.484a.71.71 0 0 1-.111.03zm-6.62.58l.937.333a1.71 1.71 0 0 0 2.255-1.3l.177-.97a5.105 5.105 0 0 1 1.265 0l.178.97a1.708 1.708 0 0 0 2.255 1.3L12 4.977c.255.334.467.698.63 1.084l-.754.637a1.704 1.704 0 0 0 0 2.604l.755.637a4.99 4.99 0 0 1-.63 1.084l-.937-.334a1.71 1.71 0 0 0-2.255 1.3l-.178.97a5.099 5.099 0 0 1-1.265 0l-.177-.97a1.708 1.708 0 0 0-2.255-1.3L4 11.023a4.987 4.987 0 0 1-.63-1.084l.754-.638a1.704 1.704 0 0 0 0-2.603l-.755-.637c.164-.386.376-.75.63-1.084z" fill="currentColor"></path>
+            </g>
+          </svg>
+        </cosy-icon>
+      </cosy-tooltip>
+    </div>
+  </aside>
+  <main>
+    
+<link rel="stylesheet" href="/css/4dbc8f91.css">
+
+
+<div class="post-container">
+  <header>
+    <div class="left">
+      
+<link rel="stylesheet" href="/css/7d333f9e.css">
+
+<nav class="breadcrumb">
+  <section>
+    <cosy-tooltip placement="bottom-left">
+      <span slot="content"><span>首页</span>
+        <cosy-short-key>⌘</cosy-short-key>
+        <cosy-short-key>H</cosy-short-key>
+      </span>
+      <cosy-icon href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M8.998 2.388a1.5 1.5 0 0 1 2.005 0l5.5 4.942A1.5 1.5 0 0 1 17 8.445V15.5a1.5 1.5 0 0 1-1.5 1.5H13a1.5 1.5 0 0 1-1.5-1.5V12a.5.5 0 0 0-.5-.5H9a.5.5 0 0 0-.5.5v3.5A1.5 1.5 0 0 1 7 17H4.5A1.5 1.5 0 0 1 3 15.5V8.445c0-.425.18-.83.498-1.115l5.5-4.942zm1.336.744a.5.5 0 0 0-.668 0l-5.5 4.942A.5.5 0 0 0 4 8.445V15.5a.5.5 0 0 0 .5.5H7a.5.5 0 0 0 .5-.5V12A1.5 1.5 0 0 1 9 10.5h2a1.5 1.5 0 0 1 1.5 1.5v3.5a.5.5 0 0 0 .5.5h2.5a.5.5 0 0 0 .5-.5V8.445a.5.5 0 0 0-.166-.371l-5.5-4.942z" fill="currentColor"></path>
+          </g>
+        </svg>
+      </cosy-icon>
+    </cosy-tooltip>
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <a class="ellipsis" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+      数据库
+    </a>
+    
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <span class="ellipsis">
+      数据库语句积累
+    </span>
+    
+  </section>
+</nav>
+
+
+<script src="/js/31d6cfe0.js"></script>
+
+    </div>
+    <div class="right">
+      
+        <cosy-tooltip id="toc-show-button" placement="left">
+          <span slot="content">
+            <span>显示 / 隐藏 文章目录</span>
+            <cosy-short-key>]</cosy-short-key>
+          </span>
+          <cosy-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+              <g fill="none">
+                <path
+                  d="M4 4c-1.104-.019-2 .896-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4zM3 6a1 1 0 0 1 1-1h2.995v10H4a1 1 0 0 1-1-1V6zm4.995 9V5h8.004a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7.995z"
+                  fill="currentColor"></path>
+              </g>
+            </svg>
+          </cosy-icon>
+        </cosy-tooltip>
+        
+    </div>
+  </header>
+  <div class="content">
+    <main class="cosy-scrollbar">
+      <div class="article-container">
+        <!-- 渲染文章内容 -->
+        <article>
+          <!-- 文章标题 -->
+          <h1 class="post-title">数据库语句积累</h1>
+          <div class="last-updated">
+            上次更新: 2024-12-27 08:49:55
+          </div>
+          <!-- 文章 -->
+          <h1 id="数据库语句积累"><a href="#数据库语句积累" class="headerlink" title="数据库语句积累"></a>数据库语句积累</h1><table>
+<thead>
+<tr>
+<th>主键</th>
+<th>单选</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SQL SERVER SQL积累</td>
+<td></td>
+</tr>
+<tr>
+<td>MYSQL 积累</td>
+<td></td>
+</tr>
+<tr>
+<td>MYSQL数据库安装</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>‍</p>
+<h1 id="SQL-SERVER-SQL-积累-1"><a href="#SQL-SERVER-SQL-积累-1" class="headerlink" title="SQL SERVER SQL 积累[^1]"></a>SQL SERVER SQL 积累[^1]</h1><blockquote>
+<h3 id="权限相关"><a href="#权限相关" class="headerlink" title="权限相关"></a>权限相关</h3><h4 id="查询数据库用户"><a href="#查询数据库用户" class="headerlink" title="查询数据库用户"></a>查询数据库用户</h4><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> name <span class="token keyword">AS</span> UserName
+<span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>database_principals
+<span class="token keyword">WHERE</span> <span class="token keyword">type</span> <span class="token operator">=</span> <span class="token string">'S'</span><span class="token punctuation">;</span></code></pre>
+
+<h4 id="查询特定用户权限"><a href="#查询特定用户权限" class="headerlink" title="查询特定用户权限"></a>查询特定用户权限</h4><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">EXEC</span> sp_helprotect <span class="token variable">@username</span> <span class="token operator">=</span> <span class="token string">'your_username'</span><span class="token punctuation">;</span></code></pre>
+
+<h4 id="查询数据库中所有用户及其权限"><a href="#查询数据库中所有用户及其权限" class="headerlink" title="查询数据库中所有用户及其权限"></a>查询数据库中所有用户及其权限</h4><pre class="language-sql" data-language="sql"><code class="language-sql"></code></pre>
+
+<h3 id="时间相关"><a href="#时间相关" class="headerlink" title="时间相关"></a>时间相关</h3><h4 id="SQL-时间判断-优化写法"><a href="#SQL-时间判断-优化写法" class="headerlink" title="SQL 时间判断 优化写法"></a>SQL 时间判断 优化写法</h4><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token operator">and</span> b<span class="token punctuation">.</span>c_effect_dt <span class="token operator">>=</span> @开始日期
+<span class="token operator">and</span> b<span class="token punctuation">.</span>c_effect_dt <span class="token operator">&lt;</span>dateadd<span class="token punctuation">(</span><span class="token keyword">day</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> @结束日期<span class="token punctuation">)</span></code></pre>
+
+<h4 id="CONVERT-时间格式化"><a href="#CONVERT-时间格式化" class="headerlink" title="CONVERT() 时间格式化"></a>CONVERT() 时间格式化</h4><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wybshyy/p/16042508.html">SqlSERVER 中将 datetime 转换成字符串的方法(CONVERT) - 离。 - 博客园 (cnblogs.com)</a></p>
+<p>一、CONVERT (<data_ type>[ length ]， <expression> [， style])<br>二、这里注重说明一下 style 的含义：style 是将 DATATIME 和 SMALLDATETIME 数据转换为字符串时所选用的由 SQL Server 系统提供的转换样式编号，不同的样式编号有不同的输出格式；一般在时间类型(datetime,smalldatetime)与字符串类型(nchar,nvarchar,char,varchar)相互转换的时候才用到.<br>三、下表是 SQL Server 系统提供的转换样式编号：<br>​<img src="https://img.syjie.cc/Pictures/20241227084622.png" alt="image">​<br>表中‘   <em>‘表示的含义说明： * 默认值（style 0 或 100、9 或 109、13 或 113、20 或 120、21 或 121）始终返回世纪数位 (yyyy)。</em>  * 当转换为 datetime 时输入；当转换为字符数据时输出。* ** 专门用于 XML。对于从 datetime 或 smalldatetime 到 character 数据的转换，输出格式如表中所示。对于从 float、money 或 smallmoney 到 character 数据的转换，输出等同于 style 2。对于从 rea到 character 数据的转换，输出等同于 style 1。<br>Hijri 是具有几种变化形式的日历系统，Microsoft? SQL Server? 2000 使用其中的科威特算法。<br>四、不带世纪数位的实例代码（注释的表示非有效的样式号）</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style0 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style1 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style2 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style3 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style4 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style5 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style6 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style7 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style8 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style9 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style10 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style11 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style12 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style13 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style14 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 15) AS Style15 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 16) AS Style16 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 17) AS Style17 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 18) AS Style18 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 19) AS Style19 </span>
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style21 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style21 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style22 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style23 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style24 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style25 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 26) AS Style26 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 27) AS Style27 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 28) AS Style28 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 29) AS Style29 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 30) AS Style30 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 31) AS Style31</span>
+</code></pre>
+
+<p>五、带世纪数位的实例代码（注释的表示非有效的样式号）：</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style100 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style101 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style102 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">103</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style103 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">104</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style104 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">105</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style105 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">106</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style106 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style107 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">108</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style108 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">109</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style109 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style110 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style111 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style112 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">113</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style113 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">114</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style114 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 115) AS Style115 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 116) AS Style116 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 117) AS Style117 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 118) AS Style118 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 119) AS Style119 </span>
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style121 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">121</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style121 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 122) AS Style122 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 123) AS Style123 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 124) AS Style124 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 125) AS Style125 </span>
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">126</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style126 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">127</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style127 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 128) AS Style128 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 129) AS Style129 </span>
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">130</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style130 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">131</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style131
+</code></pre>
+
+<p><strong>SQL 将 datetime 转化为字符串并截取字符串</strong></p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"> 
+<span class="token keyword">select</span> sr_child <span class="token keyword">as</span> <span class="token string">'孩子姓名'</span><span class="token punctuation">,</span> sr_parents <span class="token keyword">as</span> <span class="token string">'家长姓名'</span> <span class="token punctuation">,</span>ss_updatetime <span class="token keyword">as</span> <span class="token string">'分配时间'</span><span class="token punctuation">,</span> <span class="token keyword">left</span><span class="token punctuation">(</span>ss_updatetime<span class="token punctuation">,</span>CHARINDEX<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span>ss_updatetime<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>SUBSTRING<span class="token punctuation">(</span><span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ss_updatetime<span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token keyword">as</span> <span class="token string">'转换格式并截取后的时间'</span><span class="token keyword">from</span> dbo<span class="token punctuation">.</span>tb_sell_resources<span class="token punctuation">,</span>dbo<span class="token punctuation">.</span>tb_sell_selldetails <span class="token keyword">where</span> sr_id <span class="token operator">=</span> ss_rsid <span class="token operator">and</span> ss_qdstate <span class="token operator">&lt;></span> <span class="token number">1</span> <span class="token keyword">order</span> <span class="token keyword">by</span> ss_updatetime 
+</code></pre>
+
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span>c_dt<span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h3><h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>  <span class="token keyword">FROM</span> <span class="token punctuation">(</span>
+    <span class="token keyword">SELECT</span>
+        c_store_id<span class="token punctuation">,</span>
+        c_id<span class="token punctuation">,</span>
+        c_type<span class="token punctuation">,</span>
+        ROW_NUMBER<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> c_store_id<span class="token punctuation">,</span>c_id <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> c_type <span class="token keyword">ASC</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> rn
+    <span class="token keyword">FROM</span>
+        <span class="token comment">#ttb_ticket</span>
+<span class="token punctuation">)</span> <span class="token keyword">AS</span> subquery
+<span class="token keyword">WHERE</span> rn <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+
+<p>sp_help 表名 —-查看表结构<br>sp_helptext 存储过程名 —-查看存储过程的定义语句<br>sp_helptext 函数名 —-查看函数的定义语句<br>sp_helptext 触发器名 —-查看触发器的定义语句</p>
+<p>日常很实用的语句比如：<br>select * from sysobjects WHERE name LIKE ‘%stu%’ —检索名字包含 stu 的所有对象；<br>select * from sys.tables where name like … —检索表名<br>select * from sys.views where name like … —检索视图名<br>select * from sys.procedures order by modify_date desc –按修改日期倒序查询数据库里的所有存储过程<br>select object_name(id) from syscomments where text like ‘% 测试 %’<br>—-查询定义语句里包含“测试”两个字的所有对象名；<br>这里 object_name 是一个系统内置函数，返回的是对象名。</p>
+<p>SQL Server 提供了大量预制的存储过程，这些存储过程用于执行各种数据库管理任务。以下是一些常见的系统存储过程类别及其用途：</p>
+<ol>
+<li><strong>信息架构视图</strong>：如 <code>sp_columns</code>, <code>sp_tables</code> 等，它们返回关于数据库对象（例如表、列）的信息。</li>
+<li><strong>配置和状态信息</strong>：如 <code>sp_configure</code>, <code>xp_msver</code> 等，用来查看或设置服务器配置参数。</li>
+<li><strong>安全性相关</strong>：如 <code>sp_addlogin</code>, <code>sp_grantdbaccess</code> 等，用于用户权限管理和角色分配。</li>
+<li><strong>维护和管理任务</strong>：如 <code>sp_updatestats</code>, <code>sp_recompile</code> 等，帮助进行索引重建、统计更新等操作。</li>
+<li><strong>备份与恢复</strong>：如 <code>xp_backupdatabase</code>, <code>xp_restorehistory</code> 等，用于数据备份和历史记录查询。</li>
+<li><strong>诊断工具</strong>：如 <code>sp_who2</code>, <code>xp_logininfo</code> 等，提供当前活动会话和登录账户的信息。</li>
+<li><strong>动态管理视图和函数</strong>（DMVs 和 DMFs）: 如 <code>sys.dm_exec_requests</code>, <code>sys.dm_os_host_info</code> 等，提供了运行时的内部状态信息。</li>
+<li><strong>扩展存储过程</strong>（XP 开头）: 如 xp_cmdshel(已在某些版本中弃用) ，允许从 SQL Server 中执行操作系统命令。</li>
+<li><strong>服务代理相关的存储过程</strong>：如 sp_send_dbmai发送邮件通知；</li>
+<li><strong>全文搜索相关的存储过程</strong>：比如 sp_fulltext_database、sp_help_fulltext_catalogs 等等。<br>请注意，在不同版本的 SQL Server 中可用的预制存储过程可能会有所不同。此外，出于安全考虑，默认情况下某些扩展存储过程可能被禁用。在使用任何系统存储过程之前，请确保了解其功能并检查是否符合你的使用场景。</li>
+</ol>
+<h4 id="根据注释查询数据库中的表"><a href="#根据注释查询数据库中的表" class="headerlink" title="根据注释查询数据库中的表"></a>根据注释查询数据库中的表</h4><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> t<span class="token punctuation">.</span>name <span class="token keyword">AS</span> TableName<span class="token punctuation">,</span> ep<span class="token punctuation">.</span><span class="token keyword">value</span> <span class="token keyword">AS</span> TableComment <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span><span class="token keyword">tables</span> t <span class="token keyword">JOIN</span> sys<span class="token punctuation">.</span>extended_properties ep <span class="token keyword">ON</span> t<span class="token punctuation">.</span>object_id <span class="token operator">=</span> ep<span class="token punctuation">.</span>major_id <span class="token keyword">WHERE</span> ep<span class="token punctuation">.</span>minor_id <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">AND</span> ep<span class="token punctuation">.</span>name <span class="token operator">=</span> N<span class="token string">'MS_Description'</span> <span class="token operator">AND</span> t<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'YourTableName'</span><span class="token punctuation">;</span></code></pre>
+
+<h4 id="事务相关"><a href="#事务相关" class="headerlink" title="事务相关"></a>事务相关</h4><ol>
+<li>开始一个新的事务：<code>BEGIN TRANSACTION;</code></li>
+<li>执行一系列数据库操作（例如：INSERT、UPDATE、DELETE）。</li>
+<li>如果一切正常，提交事务：<code>COMMIT TRANSACTION;</code></li>
+<li>如果遇到错误或者需要撤销某些更改，可以回滚事务：<code>ROLLBACK TRANSACTION;</code><br>此外，在编写存储过程或触发器时，也可以使用 TRY…CATCH 结构来自动处理异常并回滚事务：</li>
+</ol>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">BEGIN</span> TRY
+    <span class="token keyword">BEGIN</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
+    <span class="token comment">-- 数据库操作...</span>
+    <span class="token keyword">COMMIT</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span> TRY
+<span class="token keyword">BEGIN</span> CATCH
+    <span class="token keyword">ROLLBACK</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
+    <span class="token comment">-- 这里可以记录日志或者抛出自定义的错误信息等...</span>
+<span class="token keyword">END</span> CATCH</code></pre>
+
+<h2 id="访问其他数据库"><a href="#访问其他数据库" class="headerlink" title="访问其他数据库"></a>访问其他数据库</h2><p>在 SQL Server 中访问其他数据库的数据可以通过几种不同的方法实现。如果你提到的是从一个 SQL Server 数据库访问另一个 SQL Server 数据库中的数据，可以使用以下几种方式：</p>
+<ol>
+<li><p><strong>链接服务器（Linked Servers）</strong></p>
+<ul>
+<li>链接服务器允许你在当前数据库中定义一个指向其他数据库或不同类型的数据库系统的连接。</li>
+<li>一旦链接服务器创建好，你可以使用 <code>OPENQUERY</code>​ 函数来执行远程查询。</li>
+</ul>
+</li>
+<li><p><strong>四部分命名（Four-Part Names）</strong></p>
+<ul>
+<li>如果两个数据库位于同一服务器实例上，并且你有足够的权限，可以直接使用四部分命名来引用对象。</li>
+<li>例如：<code>&lt;服务器名&gt;.&lt;数据库名&gt;.&lt;架构名&gt;.&lt;表名&gt;</code>​。<br>​<code>LEFT JOIN zlhq_srv.enjoy_lg_mall.dbo.V_wms_tb_store s</code>​</li>
+</ul>
+</li>
+</ol>
+<p>这看起来像是使用了四部分命名的方式访问另一个数据库中的视图。假设 <code>zlhq_srv</code>​ 是服务器名称，<code>enjoy_lg_mall</code>​ 是数据库名称，<code>dbo</code>​ 是模式名称，而 <code>V_wms_tb_store</code>​ 是视图名称。</p>
+<p>如果这是你想要实现的效果，请确保：</p>
+<ul>
+<li>当前用户有权限访问目标数据库。</li>
+<li>服务器名正确无误，并且两个数据库之间网络可达。</li>
+</ul>
+<h3 id="链接数据库"><a href="#链接数据库" class="headerlink" title="链接数据库"></a>链接数据库</h3><p>如果是在尝试设置链接服务器，请先运行类似下面的 T-SQL 命令来创建链接服务器：</p>
+<p>EXEC master.dbo.sp_addlinkedserver<br>@server &#x3D; N’zlhq_srv’, – 链接服务器名<br>@srvproduct &#x3D; N’SQL Server’, – 目标服务器产品名<br>@provider &#x3D; N’SQLNCLI’, – 提供者<br>@datasrc &#x3D; N’&lt; 目标服务器 IP 或名称 &gt;’; – 目标服务器地址</p>
+<p>请注意，上述示例中的具体细节如服务器名、数据库名等都需要根据实际情况调整。</p>
+<blockquote>
+<h5 id="查看-SQL-Server-中的链接服务器配置"><a href="#查看-SQL-Server-中的链接服务器配置" class="headerlink" title="查看 SQL Server 中的链接服务器配置"></a>查看 SQL Server 中的链接服务器配置</h5><p>可以使用以下步骤：</p>
+<ol>
+<li><p><strong>通过 SQL Server Management Studio (SSMS) 查看：</strong></p>
+<ul>
+<li>打开 SSMS 并连接到您的 SQL Server 实例。</li>
+<li>在对象资源管理器中，展开“服务器对象”节点。</li>
+<li>展开“链接服务器”节点，您将看到所有已配置的链接服务器。</li>
+</ul>
+</li>
+<li><p><strong>通过 T-SQL 查询查看：</strong>  您可以使用系统目录视图或存储过程来查询链接服务器的详细信息。以下是几个常用的查询示例：<br>sql</p>
+<p>复制代码</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 查看所有链接服务器的基本信息</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>servers<span class="token punctuation">;</span>
+<span class="token comment">-- 查看特定链接服务器的详细信息</span>
+<span class="token keyword">EXEC</span> sp_helpserver <span class="token string">'链接服务器名称'</span><span class="token punctuation">;</span>
+<span class="token comment">-- 查看链接服务器的登录映射</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>linked_logins <span class="token keyword">WHERE</span> server_id <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> server_id <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>servers <span class="token keyword">WHERE</span> name <span class="token operator">=</span> <span class="token string">'链接服务器名称'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 查看链接服务器的安全上下文</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>server_principals <span class="token keyword">WHERE</span> <span class="token keyword">type</span> <span class="token operator">=</span> <span class="token string">'S'</span> <span class="token operator">AND</span> name <span class="token operator">LIKE</span> <span class="token string">'%链接服务器名称%'</span><span class="token punctuation">;</span></code></pre></li>
+</ol>
+</blockquote>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h3 id="业务相关"><a href="#业务相关" class="headerlink" title="业务相关"></a>业务相关</h3><h4 id="进销存取期末数，取小于等于结束日期的最大日期的库存"><a href="#进销存取期末数，取小于等于结束日期的最大日期的库存" class="headerlink" title="进销存取期末数，取小于等于结束日期的最大日期的库存"></a>进销存取期末数，取小于等于结束日期的最大日期的库存</h4><p>​<img src="https://img.syjie.cc/Pictures/Pasted%20image%2020240913101633-20241024231005-2tz9kr0.png">​</p>
+<h4 id="取期初数，取小于开始日期的最大日期的库存"><a href="#取期初数，取小于开始日期的最大日期的库存" class="headerlink" title="取期初数，取小于开始日期的最大日期的库存"></a>取期初数，取小于开始日期的最大日期的库存</h4><p>​<img src="https://img.syjie.cc/Pictures/Pasted%20image%2020240913101714-20241024231005-htk1wcc.png">​</p>
+<h4 id="取发生数数，取开始日期与结束日期之间的汇总数"><a href="#取发生数数，取开始日期与结束日期之间的汇总数" class="headerlink" title="取发生数数，取开始日期与结束日期之间的汇总数"></a>取发生数数，取开始日期与结束日期之间的汇总数</h4><p>​<img src="https://img.syjie.cc/Pictures/Pasted%20image%2020240913101745-20241024231005-7d9s41x.png">​</p>
+</blockquote>
+<p>‍</p>
+<blockquote>
+<h3 id="分析-SQL-查询效率-Points"><a href="#分析-SQL-查询效率-Points" class="headerlink" title="分析 SQL 查询效率 #Points#"></a>分析 SQL 查询效率 #Points#</h3><p>分析 SQL 查询效率通常涉及以下几个方面：</p>
+<ol>
+<li>查看查询计划：使用 EXPLAIN 或 EXPLAIN ANALYZE 来查看数据库是如何执行查询的。</li>
+<li>优化索引：确保合适的索引被使用来加快查询速度。</li>
+<li>查询优化：简化查询，避免不必要的计算和数据检索。</li>
+<li>分析运行时间：记录查询的运行时间，找出慢查询。</li>
+<li>使用缓存：配置合适的缓存策略。</li>
+<li>硬件资源：提升硬件性能，如增加内存、使用更快的硬盘。</li>
+<li>数据库配置：调整数据库配置参数，如缓冲区大小、连接数等。</li>
+</ol>
+<h4 id="分析-SQL-Server-查询效率"><a href="#分析-SQL-Server-查询效率" class="headerlink" title="分析 SQL Server 查询效率"></a>分析 SQL Server 查询效率</h4><p>分析 SQL Server 查询效率的一般步骤如下：</p>
+<ol>
+<li>使用 SQL Server Management Studio (SSMS) 连接到数据库。</li>
+<li>执行您的 SQL 查询。</li>
+<li>查看查询计划（Query Plan）：<br>在查询结果窗口中，点击“包含实际执行计划”（Display Estimated Execution Plan）图标。<br>或者，您可以使用 <code>SET SHOWPLAN_ALL ON</code> 在查询分析器中显示查询计划而不执行查询。</li>
+<li>分析查询计划：<br>查看操作的类型（如扫描、联接、排序等）。<br>评估操作对资源的使用情况（如 I&#x2F;O 和 CPU）。<br>查看是否有不需要的书签查找器（bookmark lookups）或不适当的排序操作。</li>
+<li>如果需要，使用 <code>SET STATISTICS IO ON</code> 和 <code>SET STATISTICS TIME ON</code> 来获取更多查询执行的统计信息。</li>
+<li>根据查询计划和统计信息进行优化：<br>更新统计信息。<br>使用索引提高查询的效率。<br>重写查询以提高效率。<br>如果必要，可以重构数据库架构或查询。<br>示例代码：</li>
+</ol>
+<pre class="language-SQL" data-language="SQL"><code class="language-SQL">-- 查看查询计划但不执行查询
+SET SHOWPLAN_ALL ON;
+GO
+-- 执行您的查询
+SELECT * FROM your_table WHERE your_column &#x3D; &#39;your_value&#39;;
+-- 关闭显示查询计划的设置
+SET SHOWPLAN_ALL OFF;
+GO
+-- 查看IO和CPU统计信息
+SET STATISTICS IO ON;
+SET STATISTICS TIME ON;
+GO
+-- 执行查询
+SELECT * FROM your_table WHERE your_column &#x3D; &#39;your_value&#39;;
+-- 关闭统计信息设置
+SET STATISTICS IO OFF;
+SET STATISTICS TIME OFF;
+GO</code></pre>
+
+<p>请注意，优化查询时应该在了解业务逻辑和数据的前提下进行，避免对数据库性能产生不必要的负面影响。</p>
+<h4 id="游标使用"><a href="#游标使用" class="headerlink" title="游标使用"></a>游标使用</h4><p>在 SQL 中，<code>FETCH NEXT FROM cur INTO @cid</code> 是用来从游标 <code>cur</code> 中获取下一行数据，并将其存储到变量 <code>@cid</code> 中。而 <code>WHILE @@FETCH_STATUS=0</code> 则是用来检查是否还有更多的行可以被提取。<br>以下是使用这些语句的完整示例：</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DECLARE</span> done <span class="token keyword">INT</span><span class="token punctuation">;</span>
+<span class="token keyword">DECLARE</span> cid <span class="token keyword">INT</span><span class="token punctuation">;</span>
+<span class="token comment">-- 声明并打开游标</span>
+<span class="token keyword">DECLARE</span> cur <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span> <span class="token keyword">SELECT</span> column_name <span class="token keyword">FROM</span> table_name <span class="token keyword">WHERE</span> condition<span class="token punctuation">;</span>
+<span class="token keyword">OPEN</span> cur<span class="token punctuation">;</span>
+<span class="token comment">-- 初始化完成标志为 0（未完成）</span>
+<span class="token keyword">SET</span> done <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token comment">-- 获取第一行数据</span>
+<span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> cur <span class="token keyword">INTO</span> <span class="token variable">@cid</span><span class="token punctuation">;</span>
+<span class="token comment">-- 使用循环遍历所有结果</span>
+<span class="token keyword">WHILE</span> @<span class="token variable">@FETCH_STATUS</span> <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">BEGIN</span>
+    <span class="token comment">-- 在这里处理每行数据</span>
+    <span class="token comment">-- 获取下一行数据</span>
+    <span class="token keyword">FETCH</span> <span class="token keyword">NEXT</span> <span class="token keyword">FROM</span> cur <span class="token keyword">INTO</span> <span class="token variable">@cid</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span>
+<span class="token comment">-- 关闭和释放游标资源</span>
+<span class="token keyword">CLOSE</span> cur<span class="token punctuation">;</span>
+<span class="token keyword">DEALLOCATE</span> cur<span class="token punctuation">;</span></code></pre>
+
+<p>在这个例子中：</p>
+<ul>
+<li><code>done</code> 是一个用于控制循环结束的标志。</li>
+<li><code>cid</code> 是用来存储当前行的数据列值的变量。</li>
+<li>开始时通过 <code>OPEN</code> 打开游标，然后进入一个循环，在每次迭代中用 <code>FETCH NEXT FROM ... INTO ...;</code> 提取下一行数据。</li>
+<li>如果没有更多行可提取，则 <code>@@FETCH_STATUS</code> 的值为 -1，此时退出循环。</li>
+<li>最后关闭并释放游标的资源。</li>
+</ul>
+<hr>
+<p>#待确认问题#</p>
+</blockquote>
+<h1 id="MYSQL-积累-2"><a href="#MYSQL-积累-2" class="headerlink" title="MYSQL 积累[^2]"></a>MYSQL 积累[^2]</h1><blockquote>
+<p>‍</p>
+</blockquote>
+<p>[^1]: # <span id="20241024230858-8208erv" style="display: none;"></span>SQL SERVER SQL积累</p>
+<pre><code>### 权限相关
+
+#### 查询数据库用户
+
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> name <span class="token keyword">AS</span> UserName
+<span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>database_principals
+<span class="token keyword">WHERE</span> <span class="token keyword">type</span> <span class="token operator">=</span> <span class="token string">'S'</span><span class="token punctuation">;</span></code></pre>
+#### 查询特定用户权限
+
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">EXEC</span> sp_helprotect <span class="token variable">@username</span> <span class="token operator">=</span> <span class="token string">'your_username'</span><span class="token punctuation">;</span></code></pre>
+#### 查询数据库中所有用户及其权限
+
+<pre class="language-sql" data-language="sql"><code class="language-sql"></code></pre>
+### 时间相关
+
+#### SQL 时间判断 优化写法
+
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token operator">and</span> b<span class="token punctuation">.</span>c_effect_dt <span class="token operator">>=</span> @开始日期
+<span class="token operator">and</span> b<span class="token punctuation">.</span>c_effect_dt <span class="token operator">&lt;</span>dateadd<span class="token punctuation">(</span><span class="token keyword">day</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> @结束日期<span class="token punctuation">)</span></code></pre>
+#### CONVERT() 时间格式化
+
+[SqlSERVER 中将 datetime 转换成字符串的方法(CONVERT) - 离。 - 博客园 (cnblogs.com)](https://www.cnblogs.com/wybshyy/p/16042508.html)
+
+一、CONVERT (&lt;data_ type&gt;[ length ]， &lt;expression&gt; [， style])  
+二、这里注重说明一下 style 的含义：style 是将 DATATIME 和 SMALLDATETIME 数据转换为字符串时所选用的由 SQL Server 系统提供的转换样式编号，不同的样式编号有不同的输出格式；一般在时间类型(datetime,smalldatetime)与字符串类型(nchar,nvarchar,char,varchar)相互转换的时候才用到.  
+三、下表是 SQL Server 系统提供的转换样式编号：  
+​![image](https://img.syjie.cc/Pictures/20241227084622.png)​  
+表中‘   *&#39;表示的含义说明： * 默认值（style 0 或 100、9 或 109、13 或 113、20 或 120、21 或 121）始终返回世纪数位 (yyyy)。*  * 当转换为 datetime 时输入；当转换为字符数据时输出。* ** 专门用于 XML。对于从 datetime 或 smalldatetime 到 character 数据的转换，输出格式如表中所示。对于从 float、money 或 smallmoney 到 character 数据的转换，输出等同于 style 2。对于从 rea到 character 数据的转换，输出等同于 style 1。
+Hijri 是具有几种变化形式的日历系统，Microsoft? SQL Server? 2000 使用其中的科威特算法。  
+四、不带世纪数位的实例代码（注释的表示非有效的样式号）
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style0 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style1 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style2 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style3 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style4 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style5 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style6 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style7 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style8 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style9 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style10 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style11 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style12 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style13 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style14 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 15) AS Style15 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 16) AS Style16 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 17) AS Style17 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 18) AS Style18 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 19) AS Style19 </span>
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style21 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style21 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style22 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style23 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style24 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style25 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 26) AS Style26 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 27) AS Style27 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 28) AS Style28 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 29) AS Style29 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 30) AS Style30 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 31) AS Style31</span>
+</code></pre>
+五、带世纪数位的实例代码（注释的表示非有效的样式号）：
+
+<pre class="language-sql" data-language="sql"><code class="language-sql">
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style100 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">101</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style101 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style102 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">103</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style103 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">104</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style104 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">105</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style105 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">106</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style106 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style107 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">108</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style108 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">109</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style109 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style110 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style111 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style112 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">113</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style113 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">114</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style114 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 115) AS Style115 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 116) AS Style116 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 117) AS Style117 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 118) AS Style118 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 119) AS Style119 </span>
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style121 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">121</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style121 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 122) AS Style122 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 123) AS Style123 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 124) AS Style124 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 125) AS Style125 </span>
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">126</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style126 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">127</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style127 
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 128) AS Style128 </span>
+<span class="token comment">--SELECT CONVERT(varchar(100), GETDATE(), 129) AS Style129 </span>
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">130</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style130 
+<span class="token keyword">SELECT</span> <span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> GETDATE<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">131</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> Style131
+</code></pre>
+**SQL 将 datetime 转化为字符串并截取字符串**
+
+<pre class="language-sql" data-language="sql"><code class="language-sql"> 
+<span class="token keyword">select</span> sr_child <span class="token keyword">as</span> <span class="token string">'孩子姓名'</span><span class="token punctuation">,</span> sr_parents <span class="token keyword">as</span> <span class="token string">'家长姓名'</span> <span class="token punctuation">,</span>ss_updatetime <span class="token keyword">as</span> <span class="token string">'分配时间'</span><span class="token punctuation">,</span> <span class="token keyword">left</span><span class="token punctuation">(</span>ss_updatetime<span class="token punctuation">,</span>CHARINDEX<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span>ss_updatetime<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>SUBSTRING<span class="token punctuation">(</span><span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">CHAR</span><span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ss_updatetime<span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token keyword">as</span> <span class="token string">'转换格式并截取后的时间'</span><span class="token keyword">from</span> dbo<span class="token punctuation">.</span>tb_sell_resources<span class="token punctuation">,</span>dbo<span class="token punctuation">.</span>tb_sell_selldetails <span class="token keyword">where</span> sr_id <span class="token operator">=</span> ss_rsid <span class="token operator">and</span> ss_qdstate <span class="token operator">&lt;></span> <span class="token number">1</span> <span class="token keyword">order</span> <span class="token keyword">by</span> ss_updatetime 
+</code></pre>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CONVERT</span><span class="token punctuation">(</span><span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>a<span class="token punctuation">.</span>c_dt<span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span></code></pre>
+### 技巧
+
+#### 去重
+
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>  <span class="token keyword">FROM</span> <span class="token punctuation">(</span>
+    <span class="token keyword">SELECT</span>
+        c_store_id<span class="token punctuation">,</span>
+        c_id<span class="token punctuation">,</span>
+        c_type<span class="token punctuation">,</span>
+        ROW_NUMBER<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> c_store_id<span class="token punctuation">,</span>c_id <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> c_type <span class="token keyword">ASC</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> rn
+    <span class="token keyword">FROM</span>
+        <span class="token comment">#ttb_ticket</span>
+<span class="token punctuation">)</span> <span class="token keyword">AS</span> subquery
+<span class="token keyword">WHERE</span> rn <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+sp_help 表名 ----查看表结构
+sp_helptext 存储过程名 ----查看存储过程的定义语句
+sp_helptext 函数名 ----查看函数的定义语句
+sp_helptext 触发器名 ----查看触发器的定义语句
+
+日常很实用的语句比如：
+select * from sysobjects WHERE name LIKE &#39;%stu%&#39; ---检索名字包含 stu 的所有对象；
+select * from sys.tables where name like ... ---检索表名
+select * from sys.views where name like ... ---检索视图名
+select * from sys.procedures order by modify_date desc --按修改日期倒序查询数据库里的所有存储过程
+select object_name(id) from syscomments where text like &#39;% 测试 %&#39;
+----查询定义语句里包含“测试”两个字的所有对象名；
+这里 object_name 是一个系统内置函数，返回的是对象名。
+
+SQL Server 提供了大量预制的存储过程，这些存储过程用于执行各种数据库管理任务。以下是一些常见的系统存储过程类别及其用途：
+
+1. **信息架构视图**：如 `sp_columns`, `sp_tables` 等，它们返回关于数据库对象（例如表、列）的信息。
+2. **配置和状态信息**：如 `sp_configure`, `xp_msver` 等，用来查看或设置服务器配置参数。
+3. **安全性相关**：如 `sp_addlogin`, `sp_grantdbaccess` 等，用于用户权限管理和角色分配。
+4. **维护和管理任务**：如 `sp_updatestats`, `sp_recompile` 等，帮助进行索引重建、统计更新等操作。
+5. **备份与恢复**：如 `xp_backupdatabase`, `xp_restorehistory` 等，用于数据备份和历史记录查询。
+6. **诊断工具**：如 `sp_who2`, `xp_logininfo` 等，提供当前活动会话和登录账户的信息。
+7. **动态管理视图和函数**（DMVs 和 DMFs）: 如 `sys.dm_exec_requests`, `sys.dm_os_host_info` 等，提供了运行时的内部状态信息。
+8. **扩展存储过程**（XP 开头）: 如 xp_cmdshel(已在某些版本中弃用) ，允许从 SQL Server 中执行操作系统命令。
+9. **服务代理相关的存储过程**：如 sp_send_dbmai发送邮件通知；
+10. **全文搜索相关的存储过程**：比如 sp_fulltext_database、sp_help_fulltext_catalogs 等等。
+    请注意，在不同版本的 SQL Server 中可用的预制存储过程可能会有所不同。此外，出于安全考虑，默认情况下某些扩展存储过程可能被禁用。在使用任何系统存储过程之前，请确保了解其功能并检查是否符合你的使用场景。
+
+#### 根据注释查询数据库中的表
+
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> t<span class="token punctuation">.</span>name <span class="token keyword">AS</span> TableName<span class="token punctuation">,</span> ep<span class="token punctuation">.</span><span class="token keyword">value</span> <span class="token keyword">AS</span> TableComment <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span><span class="token keyword">tables</span> t <span class="token keyword">JOIN</span> sys<span class="token punctuation">.</span>extended_properties ep <span class="token keyword">ON</span> t<span class="token punctuation">.</span>object_id <span class="token operator">=</span> ep<span class="token punctuation">.</span>major_id <span class="token keyword">WHERE</span> ep<span class="token punctuation">.</span>minor_id <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">AND</span> ep<span class="token punctuation">.</span>name <span class="token operator">=</span> N<span class="token string">'MS_Description'</span> <span class="token operator">AND</span> t<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'YourTableName'</span><span class="token punctuation">;</span></code></pre>
+#### 事务相关
+
+1. 开始一个新的事务：`BEGIN TRANSACTION;`
+2. 执行一系列数据库操作（例如：INSERT、UPDATE、DELETE）。
+3. 如果一切正常，提交事务：`COMMIT TRANSACTION;`
+4. 如果遇到错误或者需要撤销某些更改，可以回滚事务：`ROLLBACK TRANSACTION;`
+   此外，在编写存储过程或触发器时，也可以使用 TRY...CATCH 结构来自动处理异常并回滚事务：
+
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">BEGIN</span> TRY
+    <span class="token keyword">BEGIN</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
+    <span class="token comment">-- 数据库操作...</span>
+    <span class="token keyword">COMMIT</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
+<span class="token keyword">END</span> TRY
+<span class="token keyword">BEGIN</span> CATCH
+    <span class="token keyword">ROLLBACK</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
+    <span class="token comment">-- 这里可以记录日志或者抛出自定义的错误信息等...</span>
+<span class="token keyword">END</span> CATCH</code></pre>
+## 访问其他数据库
+
+在 SQL Server 中访问其他数据库的数据可以通过几种不同的方法实现。如果你提到的是从一个 SQL Server 数据库访问另一个 SQL Server 数据库中的数据，可以使用以下几种方式：
+
+1. **链接服务器（Linked Servers）**
+
+    * 链接服务器允许你在当前数据库中定义一个指向其他数据库或不同类型的数据库系统的连接。
+    * 一旦链接服务器创建好，你可以使用 `OPENQUERY`​ 函数来执行远程查询。
+2. **四部分命名（Four-Part Names）**
+
+    * 如果两个数据库位于同一服务器实例上，并且你有足够的权限，可以直接使用四部分命名来引用对象。
+    * 例如：`&lt;服务器名&gt;.&lt;数据库名&gt;.&lt;架构名&gt;.&lt;表名&gt;`​。  
+      ​`LEFT JOIN zlhq_srv.enjoy_lg_mall.dbo.V_wms_tb_store s`​
+
+这看起来像是使用了四部分命名的方式访问另一个数据库中的视图。假设 `zlhq_srv`​ 是服务器名称，`enjoy_lg_mall`​ 是数据库名称，`dbo`​ 是模式名称，而 `V_wms_tb_store`​ 是视图名称。
+
+如果这是你想要实现的效果，请确保：
+
+* 当前用户有权限访问目标数据库。
+* 服务器名正确无误，并且两个数据库之间网络可达。
+
+‍
+
+### 链接数据库
+
+如果是在尝试设置链接服务器，请先运行类似下面的 T-SQL 命令来创建链接服务器：
+
+EXEC master.dbo.sp_addlinkedserver  
+@server = N&#39;zlhq_srv&#39;, -- 链接服务器名  
+@srvproduct = N&#39;SQL Server&#39;, -- 目标服务器产品名  
+@provider = N&#39;SQLNCLI&#39;, -- 提供者  
+@datasrc = N&#39;&lt; 目标服务器 IP 或名称 &gt;&#39;; -- 目标服务器地址
+
+请注意，上述示例中的具体细节如服务器名、数据库名等都需要根据实际情况调整。
+
+‍
+
+##### 查看 SQL Server 中的链接服务器配置
+
+可以使用以下步骤：
+
+1. **通过 SQL Server Management Studio (SSMS) 查看：**
+
+    * 打开 SSMS 并连接到您的 SQL Server 实例。
+    * 在对象资源管理器中，展开“服务器对象”节点。
+    * 展开“链接服务器”节点，您将看到所有已配置的链接服务器。
+2. **通过 T-SQL 查询查看：**  您可以使用系统目录视图或存储过程来查询链接服务器的详细信息。以下是几个常用的查询示例：  
+    sql
+
+    复制代码
+
+    <pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 查看所有链接服务器的基本信息</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>servers<span class="token punctuation">;</span>
+<span class="token comment">-- 查看特定链接服务器的详细信息</span>
+<span class="token keyword">EXEC</span> sp_helpserver <span class="token string">'链接服务器名称'</span><span class="token punctuation">;</span>
+<span class="token comment">-- 查看链接服务器的登录映射</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>linked_logins <span class="token keyword">WHERE</span> server_id <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> server_id <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>servers <span class="token keyword">WHERE</span> name <span class="token operator">=</span> <span class="token string">'链接服务器名称'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 查看链接服务器的安全上下文</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>server_principals <span class="token keyword">WHERE</span> <span class="token keyword">type</span> <span class="token operator">=</span> <span class="token string">'S'</span> <span class="token operator">AND</span> name <span class="token operator">LIKE</span> <span class="token string">'%链接服务器名称%'</span><span class="token punctuation">;</span></code></pre>
+
+‍
+
+## 
+
+### 业务相关
+
+#### 进销存取期末数，取小于等于结束日期的最大日期的库存
+
+​![](https://img.syjie.cc/Pictures/Pasted%20image%2020240913101633-20241024231005-2tz9kr0.png)​
+
+#### 取期初数，取小于开始日期的最大日期的库存
+
+​![](https://img.syjie.cc/Pictures/Pasted%20image%2020240913101714-20241024231005-htk1wcc.png)​
+
+#### 取发生数数，取开始日期与结束日期之间的汇总数
+
+​![](https://img.syjie.cc/Pictures/Pasted%20image%2020240913101745-20241024231005-7d9s41x.png)​
+</code></pre>
+<p>[^2]: # <span id="20241030144129-sf6dr6p" style="display: none;"></span>MYSQL 积累</p>
+<pre><code>‍
+</code></pre>
+
+            <div class="post-tags">
+              <!-- 文章tags -->
+              
+                
+                  <cosy-label href="/tags/%E7%BC%96%E7%A8%8B/" size="sm"># 编程</cosy-label>
+                  
+                  <cosy-label href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" size="sm"># 数据库</cosy-label>
+                  
+                    
+            </div>
+            <p class="motto">在路上</p>
+        </article>
+        <!-- 评论 -->
+        <div id="vcomments"></div>
+        <div id="tcomment"></div>
+      </div>
+    </main>
+    <!-- toc -->
+    
+      <cosy-drag-box id="toc-drag-box" trigger="left" min-width="220" uid="toc-box">
+        <div class="meta-container">
+          <div class="toc-wrapper cosy-scrollbar">
+            <cosy-tooltip placement="right">
+              <p class="catalog">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 18h12"></path>
+                  </g>
+                </svg>
+                <span>目录</span>
+              </p>
+              <span slot="content">
+                <span>隐藏目录</span>
+                <cosy-short-key>]</cosy-short-key>
+              </span>
+            </cosy-tooltip>
+            <!-- 文章toc -->
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%AD%E5%8F%A5%E7%A7%AF%E7%B4%AF"><span class="toc-number">1.</span> <span class="toc-text">数据库语句积累</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL-SERVER-SQL-%E7%A7%AF%E7%B4%AF-1"><span class="toc-number">2.</span> <span class="toc-text">SQL SERVER SQL 积累[^1]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%9B%B8%E5%85%B3"><span class="toc-number">2.0.1.</span> <span class="toc-text">权限相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3"><span class="toc-number">2.0.2.</span> <span class="toc-text">时间相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E5%B7%A7"><span class="toc-number">2.0.3.</span> <span class="toc-text">技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.1.</span> <span class="toc-text">访问其他数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.1.1.</span> <span class="toc-text">链接数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E7%9B%B8%E5%85%B3"><span class="toc-number">2.2.1.</span> <span class="toc-text">业务相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90-SQL-%E6%9F%A5%E8%AF%A2%E6%95%88%E7%8E%87-Points"><span class="toc-number">2.2.2.</span> <span class="toc-text">分析 SQL 查询效率 #Points#</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MYSQL-%E7%A7%AF%E7%B4%AF-2"><span class="toc-number">3.</span> <span class="toc-text">MYSQL 积累[^2]</span></a></li></ol>
+          </div>
+        </div>
+      </cosy-drag-box>
+      
+  </div>
+
+</div>
+
+<script>
+  window.page = {
+    use: ''
+  }
+  window.katex = {
+    enable: "",
+    jsCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js",
+    cssCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+  }
+  window.mermaid = {
+    enable: "",
+    theme: "",
+    cdn: "//cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js",
+  }
+  window.valine = {
+    enable: "",
+    appId: 'yourValineAppId',
+    appKey: 'yourValineAppKey',
+    avatar: 'monsterid',
+    cdn: '//unpkg.com/valine@latest/dist/Valine.min.js',
+    serverURLs: ''
+  };
+  window.twikoo = {
+    enable: "",
+    envId: "yourTwikooEnvId",
+    cdn: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js',
+    lang: 'zh-CN',
+  }
+</script>
+
+
+<script src="/js/8f5fa89f.js"></script>
+
+  </main>
+</body>
+
+<script>
+  window.theme = {
+    color: 'hsl(238,50%,56%)'
+  }
+</script>
+
+
+<script src="/js/e5a59732.js"></script>
+
+
+</html>
