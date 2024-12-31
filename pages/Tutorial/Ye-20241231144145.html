@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    琅嬛福地
+    Sql server 数据库操作指南
   </title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="Syjie">
-  <link rel="canonical" href="https://blog.syjie.cc">
+  <link rel="canonical" href="https://blog.syjie.cc/pages/Tutorial/Ye-20241231144145">
   
   
   <link rel="icon" href='/img/p.png'>
@@ -136,7 +136,7 @@
             <span>Tools</span>
           </div>
         </a>
-      </li><li class="">
+      </li><li class="active">
         <a href="/categories/Tutorial/">
           <svg t="1735269333353" class="icon" viewBox="0 0 1376 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="22160" width="200" height="200"><path d="M542.206157 930.292953q-3.327704 0-6.766331-0.197198c-22.332588-1.232483-45.700462-8.22066-72.716485-16.293422-100.163877-29.789109-139.147308-26.707902-170.440046-24.193638-46.341353 3.697448-83.439085 14.469348-116.186153 23.934816-51.037113 14.789794-95.110697 27.521341-133.576486-6.162414C17.057562 885.097808 2.760761 849.096986 0.02465 800.364616V169.025304c0-82.958417 62.228056-150.584748 139.147307-151.804906a993.578331 993.578331 0 0 1 368.364459 0 137.939475 137.939475 0 0 1 98.278178 45.219793c26.338157 28.66755 40.84448 66.554071 40.84448 106.585113V799.193758c-2.85936 48.153103-17.143836 84.326473-42.471357 107.534124-17.353358 15.825079-37.664674 23.565071-61.98156 23.565071z m-221.095089-84.979689c62.856623 0 112.673577 14.863743 153.900127 27.114621 52.294245 15.590907 78.398231 22.18469 99.966679 2.464966 16.675492-15.282787 26.276533-41.411422 28.507327-77.646416V169.025304c0-29.222167-10.463779-56.694209-29.468663-77.39992a95.825537 95.825537 0 0 0-68.723241-31.280413h-1.996622l-1.959648-0.369745a950.515382 950.515382 0 0 0-356.027305 0l-1.996622 0.382069h-2.033597c-25.734241 0-50.112751 11.092345-68.649292 31.292739-19.004885 20.681061-29.468664 48.165428-29.468663 77.399919v629.539888c2.11987 36.395217 11.474415 62.092483 27.792487 76.413933 9.391519 8.22066 19.534852 11.375816 33.905601 10.562378 16.022276-0.912037 36.087096-6.704706 59.270098-13.409413 32.98124-9.551742 74.035242-21.432876 124.714934-25.500069 11.10467-0.936687 21.864245-1.343406 32.2664-1.343406z" p-id="22161" fill="#8a8a8a"></path><path d="M1145.642059 930.292953q-3.327704 0-6.766331-0.197198c-22.332588-1.232483-45.700462-8.22066-72.716485-16.293422-100.126902-29.789109-139.085684-26.707902-170.390746-24.193638-46.341353 3.697448-83.439085 14.469348-116.186154 23.934816-51.037113 14.789794-95.123022 27.521341-133.576485-6.162414-25.463095-22.283289-39.759895-58.284111-42.496007-107.016481l43.075274-2.464965c2.058246 36.715663 11.425116 62.610126 27.829461 76.96855 9.391519 8.22066 19.522527 11.375816 33.905602 10.562378 16.022276-0.912037 36.087096-6.704706 59.270098-13.409413 32.95659-9.453143 74.035242-21.284978 124.714934-25.40147 78.311957-6.297987 138.124347 11.536039 186.166526 25.882138 52.294245 15.590907 78.398231 22.18469 99.96668 2.464966 16.675492-15.282787 26.276533-41.411422 28.507327-77.646416V169.025304c0-29.222167-10.463779-56.694209-29.480988-77.39992a95.825537 95.825537 0 0 0-68.723241-31.280413h-1.996622l-1.959648-0.369745a950.515382 950.515382 0 0 0-356.027305 0l-1.996623 0.382069h-2.033596c-25.734241 0-50.112751 11.092345-68.649292 31.292739-19.004885 20.681061-29.468664 48.165428-29.468664 77.399919h-43.136897c0-82.958417 62.228056-150.584748 139.147307-151.804906a993.590656 993.590656 0 0 1 368.364459 0 137.92715 137.92715 0 0 1 98.253528 45.207469c26.338157 28.66755 40.84448 66.554071 40.84448 106.585112V799.193758c-2.85936 48.153103-17.143836 84.326473-42.471357 107.534124-17.304058 15.825079-37.60305 23.565071-61.969235 23.565071zM164.8076 214.097199h344.146171v43.136898H164.8076zM164.8076 361.26797h344.146171v43.136898H164.8076zM164.8076 508.438741h249.861237v43.136898H164.8076z" p-id="22162" fill="#8a8a8a"></path><path d="M767.479362 214.097199h344.146172v43.136898H767.479362zM767.479362 361.26797h344.146172v43.136898H767.479362zM981.980668 578.480738h181.680289v43.136898H981.980668z" p-id="22163" fill="#8a8a8a"></path><path d="M1051.246201 509.215205h43.136898v181.680289h-43.136898z" p-id="22164" fill="#8a8a8a"></path></svg>
           <div class="ellipsis">
@@ -169,155 +169,130 @@
   </aside>
   <main>
     
-<link rel="stylesheet" href="/css/480d1cae.css">
+<link rel="stylesheet" href="/css/4dbc8f91.css">
 
 
-<div class="tags-container cosy-scrollbar">
-  <div class="content">
-    <h2>
-      <cosy-label color="red">数据库</cosy-label>
-    </h2>
-    <ul class="timeline">
+<div class="post-container">
+  <header>
+    <div class="left">
       
-      <li>
-        <a class="timeline-item" href="/pages/Tutorial/Ye-20241231144145">
-          <div class="timeline-info">
-            
-            <span>12-31 14:41:33</span>
-          </div>
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-title ellipsis">
-              <span>Sql server 数据库操作指南</span>
-            </div>
-            <p>...</p>
-          </div>
-        </a>
-      </li>
-      
-      <li>
-        <a class="timeline-item" href="/pages/Database/Da-20241228143308">
-          <div class="timeline-info">
-            
-            <span>12-28 14:33:10</span>
-          </div>
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-title ellipsis">
-              <span>SQL Server_MySQL_Oracle 函数完全指南</span>
-            </div>
-            <p>
-字符串函数
-数值函数
-日期时间函数
-条件和控制函数
-窗口函数
-JSON 函数 (MySQL 5.7+)
-加密和安全函数
-XML 函数 (SQL Server)
-正则表达式函数
-系统信息函数
-高级聚合...</p>
-          </div>
-        </a>
-      </li>
-      
-      <li>
-        <a class="timeline-item" href="/pages/Database/Da-20241228095053">
-          <div class="timeline-info">
-            
-            <span>12-28 09:50:54</span>
-          </div>
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-title ellipsis">
-              <span>存储过程示例</span>
-            </div>
-            <p>创建数据库和表首先，我们需要创建一个数据库和几个相关的表来存储账户信息和交易记录。
-CREATE DATABASE BankDB;
-USE BankDB;
+<link rel="stylesheet" href="/css/7d333f9e.css">
 
--- 创建 Accounts 表
-CREA...</p>
-          </div>
-        </a>
-      </li>
-      
-      <li>
-        <a class="timeline-item" href="/pages/Tutorial/Tu-20241228091558">
-          <div class="timeline-info">
-            
-            <span>12-28 09:16:03</span>
-          </div>
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-title ellipsis">
-              <span>Sql server 数据库操作指南</span>
-            </div>
-            <p>
-数据库语言
-
-DML(数据操作语言)
-select
-insert
-delete
-update
-
-
-DDL（数据定义语言 – 建表建库等）
-creat
-drop
-alter
-
-
-DCL（数据控制语言）...</p>
-          </div>
-        </a>
-      </li>
-      
-      <li>
-        <a class="timeline-item" href="/pages/Database/Da-20241227084205">
-          <div class="timeline-info">
-            
-            <span>12-27 08:42:00</span>
-          </div>
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-title ellipsis">
-              <span>数据库语句积累</span>
-            </div>
-            <p>数据库语句积累
-
-
-主键
-单选
-
-
-
-SQL SERVER SQL积累
-
-
-
-MYSQL 积累
-
-
-
-MYSQL数据库安装
-
-
-
-‍
-SQL SERVER SQL 积累[^1]权限相关查询数据库用户S...</p>
-          </div>
-        </a>
-      </li>
-      
-    </ul>
-  </div>
-</div>
+<nav class="breadcrumb">
+  <section>
+    <cosy-tooltip placement="bottom-left">
+      <span slot="content"><span>首页</span>
+        <cosy-short-key>⌘</cosy-short-key>
+        <cosy-short-key>H</cosy-short-key>
+      </span>
+      <cosy-icon href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+          <g fill="none">
+            <path d="M8.998 2.388a1.5 1.5 0 0 1 2.005 0l5.5 4.942A1.5 1.5 0 0 1 17 8.445V15.5a1.5 1.5 0 0 1-1.5 1.5H13a1.5 1.5 0 0 1-1.5-1.5V12a.5.5 0 0 0-.5-.5H9a.5.5 0 0 0-.5.5v3.5A1.5 1.5 0 0 1 7 17H4.5A1.5 1.5 0 0 1 3 15.5V8.445c0-.425.18-.83.498-1.115l5.5-4.942zm1.336.744a.5.5 0 0 0-.668 0l-5.5 4.942A.5.5 0 0 0 4 8.445V15.5a.5.5 0 0 0 .5.5H7a.5.5 0 0 0 .5-.5V12A1.5 1.5 0 0 1 9 10.5h2a1.5 1.5 0 0 1 1.5 1.5v3.5a.5.5 0 0 0 .5.5h2.5a.5.5 0 0 0 .5-.5V8.445a.5.5 0 0 0-.166-.371l-5.5-4.942z" fill="currentColor"></path>
+          </g>
+        </svg>
+      </cosy-icon>
+    </cosy-tooltip>
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <a class="ellipsis" href="/categories/Tutorial/">
+      Tutorial
+    </a>
+    
+    
+    
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+      <g fill="none">
+        <path d="M7.733 4.207a.75.75 0 0 1 1.06.026l5.001 5.25a.75.75 0 0 1 0 1.035l-5 5.25a.75.75 0 1 1-1.087-1.034L12.216 10l-4.51-4.734a.75.75 0 0 1 .027-1.06z" fill="currentColor"></path>
+      </g>
+    </svg>
+    <span class="ellipsis">
+      Sql server 数据库操作指南
+    </span>
+    
+  </section>
+</nav>
 
 
 <script src="/js/31d6cfe0.js"></script>
+
+    </div>
+    <div class="right">
+      
+    </div>
+  </header>
+  <div class="content">
+    <main class="cosy-scrollbar">
+      <div class="article-container">
+        <!-- 渲染文章内容 -->
+        <article>
+          <!-- 文章标题 -->
+          <h1 class="post-title">Sql server 数据库操作指南</h1>
+          <div class="last-updated">
+            上次更新: 2024-12-31 15:20:08
+          </div>
+          <!-- 文章 -->
+          
+            <div class="post-tags">
+              <!-- 文章tags -->
+              
+                
+                  <cosy-label href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" size="sm"># 数据库</cosy-label>
+                  
+                  <cosy-label href="/tags/Tutorial/" size="sm"># Tutorial</cosy-label>
+                  
+                    
+            </div>
+            <p class="motto">在路上 🦕</p>
+        </article>
+        <!-- 评论 -->
+        <div id="vcomments"></div>
+        <div id="tcomment"></div>
+      </div>
+    </main>
+    <!-- toc -->
+    
+  </div>
+
+</div>
+
+<script>
+  window.page = {
+    use: ''
+  }
+  window.katex = {
+    enable: "",
+    jsCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js",
+    cssCdn: "//cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+  }
+  window.mermaid = {
+    enable: "",
+    theme: "",
+    cdn: "//cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js",
+  }
+  window.valine = {
+    enable: "",
+    appId: 'yourValineAppId',
+    appKey: 'yourValineAppKey',
+    avatar: 'monsterid',
+    cdn: '//unpkg.com/valine@latest/dist/Valine.min.js',
+    serverURLs: ''
+  };
+  window.twikoo = {
+    enable: "",
+    envId: "yourTwikooEnvId",
+    cdn: 'https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js',
+    lang: 'zh-CN',
+  }
+</script>
+
+
+<script src="/js/8f5fa89f.js"></script>
 
   </main>
 </body>
